@@ -1,0 +1,508 @@
+                                                        Virus Total Verification Report
+============================================================================================================================================
+S.No  | Index      | URL                                      | Actual Label    | VirusTotal Label     |    Status    | Analysis Timestamp
+--------------------------------------------------------------------------------------------------------------------------------------------
+1     | 458119     | vehiculepress.com/montreal/writers/richl | good            | good                 | Match        | 2025-03-05 00:19:04
+2     | 114100     | hfmacabados.com/verify-boainfps/bank-acc | bad             | good                 | Not Match    | 2025-03-05 00:20:07
+3     | 230060     | pix.eosphotoman.com/                     | good            | good                 | Match        | 2025-03-05 00:21:09
+4     | 7135       | 'www.gswzmb.com/down/js/?us.battle.net/l | bad             | bad                  | Match        | 2025-03-05 00:22:11
+5     | 518747     | torosakiskan.com/modules/telekom/telekom | bad             | good                 | Not Match    | 2025-03-05 00:23:13
+6     | 153573     | btjunkie.org/torrent/Stolen-Babies-There | good            | good                 | Match        | 2025-03-05 00:24:15
+7     | 175084     | en.wikipedia.org/wiki/Getchell_Mine      | good            | good                 | Match        | 2025-03-05 00:25:18
+8     | 224575     | ottenheim.cdlex.org/                     | good            | good                 | Match        | 2025-03-05 00:26:20
+9     | 52628      | www.bus.wisc.edu/ASRMI/                  | good            | good                 | Match        | 2025-03-05 00:27:23
+10    | 199841     | illicoweb.videotron.com/illicoweb/channe | good            | good                 | Match        | 2025-03-05 00:28:26
+11    | 482804     | litigation-essentials.lexisnexis.com/web | good            | good                 | Match        | 2025-03-05 00:29:28
+12    | 108673     | parsstone.co.nz/libraries/g_doc/index.ph | bad             | good                 | Not Match    | 2025-03-05 00:30:31
+13    | 502094     | goo.gl/3Tbbby                            | bad             | good                 | Not Match    | 2025-03-05 00:31:33
+14    | 228601     | pipl.com/directory/name/Doherty/Charles  | good            | good                 | Match        | 2025-03-05 00:32:36
+15    | 442036     | tcm.com/tcmdb/title/75310/Footlight-Sere | good            | good                 | Match        | 2025-03-05 00:33:38
+16    | 460074     | viptickets.com/Sport/Golden-State-Warrio | good            | good                 | Match        | 2025-03-05 00:34:41
+17    | 232602     | qc.allpages.com/longueuil/business-servi | good            | good                 | Match        | 2025-03-05 00:35:44
+18    | 519468     | mxp2131.com                              | bad             | good                 | Not Match    | 2025-03-05 00:36:47
+19    | 532852     | brothermalw.ws/06qbbzy7                  | bad             | good                 | Not Match    | 2025-03-05 00:37:49
+20    | 497236     | seyhocacm.assistkd.com/behave/silent-twi | bad             | good                 | Not Match    | 2025-03-05 00:38:52
+21    | 75935      | www.techbookreport.com/JavaIndex.html    | good            | good                 | Match        | 2025-03-05 00:39:55
+22    | 272283     | allposters.com/-st/Clarence-Alphonse-Gag | good            | good                 | Match        | 2025-03-05 00:40:58
+23    | 445946     | thepeerage.com/p2110.htm                 | good            | good                 | Match        | 2025-03-05 00:42:01
+24    | 377101     | linkedin.com/pub/james-tanabe/25/b37/8b2 | good            | good                 | Match        | 2025-03-05 00:43:03
+25    | 164549     | devilman-fightandfear.blogspot.com/      | good            | good                 | Match        | 2025-03-05 00:44:06
+26    | 151638     | bluegrassmusic.com/content/reviews/      | good            | good                 | Match        | 2025-03-05 00:45:09
+27    | 433980     | songmeanings.net/songs/view/353082210785 | good            | good                 | Match        | 2025-03-05 00:46:12
+28    | 238978     | shop.thesmartresult.org/index.php?keywor | good            | good                 | Match        | 2025-03-05 00:52:47
+29    | 39619      | www.batl-zq.tk/cert/                     | bad             | good                 | Not Match    | 2025-03-05 00:53:52
+30    | 314440     | digitalforsyth.org/photos/browse/people- | good            | good                 | Match        | 2025-03-05 00:54:56
+31    | 21103      | www.kangluchunjiuye.com/images/?us.battl | bad             | good                 | Not Match    | 2025-03-05 00:56:01
+32    | 309239     | corporationwiki.com/Alabama/Lexington/sn | good            | good                 | Match        | 2025-03-05 00:57:13
+33    | 164587     | dfchurch.com/index.php?option=com_conten | good            | good                 | Match        | 2025-03-05 00:58:17
+34    | 534972     | powertransact-exch.net/documents/Onholdi | bad             | good                 | Not Match    | 2025-03-05 00:59:19
+35    | 90234      | hem.passagen.se/larspp/                  | good            | good                 | Match        | 2025-03-05 01:00:22
+36    | 518546     | xstsa3.bimowamokykpps.com/tpo5qux8th\nww | bad             | good                 | Not Match    | 2025-03-05 01:01:25
+37    | 361279     | in2greece.com/english/animals_plants/ani | good            | good                 | Match        | 2025-03-05 01:02:29
+38    | 343768     | g4tv.com/thefeed/blog/post/710351/jade-r | good            | good                 | Match        | 2025-03-05 01:03:33
+39    | 402405     | ncaa.com/championships/basketball-women/ | good            | good                 | Match        | 2025-03-05 01:04:36
+40    | 424227     | roclatie.com/                            | good            | good                 | Match        | 2025-03-05 01:05:41
+41    | 119256     | higieneclinicahospitalaria.com/errors/fr | bad             | good                 | Not Match    | 2025-03-05 01:06:43
+42    | 525192     | mohammedaltememi97.ddns.net/             | bad             | good                 | Not Match    | 2025-03-05 01:07:44
+43    | 128741     | encurtado.com/hUCYm                      | bad             | good                 | Not Match    | 2025-03-05 01:08:48
+44    | 216775     | mp3songs4me.blogspot.com/2009/03/main-kh | good            | good                 | Match        | 2025-03-05 01:09:50
+45    | 141381     | algeriatorrent.blogspot.com/2011/03/tele | good            | good                 | Match        | 2025-03-05 01:10:53
+46    | 206573     | latimesblogs.latimes.com/varsitytimesins | good            | good                 | Match        | 2025-03-05 01:11:55
+47    | 87080      | en.wikipedia.org/wiki/RTLinux            | good            | good                 | Match        | 2025-03-05 01:13:00
+48    | 546499     | tercumemerkezi.az/deamo/                 | bad             | good                 | Not Match    | 2025-03-05 01:14:03
+49    | 60061      | www.isical.ac.in/~uma/                   | good            | good                 | Match        | 2025-03-05 01:15:06
+50    | 512408     | rated.republicoftaste.com/6t8os/lv-pne1_ | bad             | good                 | Not Match    | 2025-03-05 01:16:09
+51    | 344624     | gazillionmovies.com/Actor/P/Pe/PeterMcRo | good            | good                 | Match        | 2025-03-05 01:17:11
+52    | 16348      | tr-tof.likeme.c.pl/?id=116901&amp;c=1    | bad             | good                 | Not Match    | 2025-03-05 01:18:13
+53    | 161170     | conservapedia.com/Roman_Catholic_Church  | good            | good                 | Match        | 2025-03-05 01:19:19
+54    | 292275     | bizjournals.com/memphis/stories/2010/03/ | good            | good                 | Match        | 2025-03-05 01:20:22
+55    | 66784      | tools.ietf.org/html/rfc841               | good            | good                 | Match        | 2025-03-05 01:21:25
+56    | 545201     | bookletta.com/nsb6sxsg                   | bad             | good                 | Not Match    | 2025-03-05 01:22:28
+57    | 9580       | pastehtml.com/view/b2fefdved.html        | bad             | good                 | Not Match    | 2025-03-05 01:23:30
+58    | 147436     | ballerwives.com/category/rasheed-wallace | good            | good                 | Match        | 2025-03-05 01:24:34
+59    | 384528     | maplandia.com/india/andhra-pradesh/hyder | good            | good                 | Match        | 2025-03-05 01:25:37
+60    | 200625     | instantprospeaker.com/testimonial/       | good            | good                 | Match        | 2025-03-05 01:26:39
+61    | 347417     | gorillavsbear.net/2010/12/22/mp3-another | good            | good                 | Match        | 2025-03-05 01:27:41
+62    | 136751     | manu-chaput.net/webcalendar/docs/taxe    | bad             | good                 | Not Match    | 2025-03-05 01:28:43
+63    | 261871     | womensprowrestling.blogspot.com/2008/11/ | good            | good                 | Match        | 2025-03-05 01:29:46
+64    | 440647     | superiortour.com.sg/index.jsp            | good            | good                 | Match        | 2025-03-05 01:30:47
+65    | 279807     | answers.com/topic/allegheny-county-penns | good            | good                 | Match        | 2025-03-05 01:31:50
+66    | 369538     | kurtzmangroup.com/experience.php         | good            | good                 | Match        | 2025-03-05 01:32:52
+67    | 356195     | iajgsjewishcemeteryproject.org/kansas-ks | good            | good                 | Match        | 2025-03-05 01:33:54
+68    | 261603     | wn.com/_tenor?orderby=published          | good            | good                 | Match        | 2025-03-05 01:34:57
+69    | 405345     | nj.com/sports/njsports/index.ssf/2009/08 | good            | good                 | Match        | 2025-03-05 01:36:00
+70    | 312749     | davinaplusdaniel.com/                    | good            | good                 | Match        | 2025-03-05 01:37:03
+71    | 311424     | cwsl.edu/main/default.asp?nav=pros_stude | good            | good                 | Match        | 2025-03-05 01:38:06
+72    | 396810     | mylife.com/heather-shuey                 | good            | good                 | Match        | 2025-03-05 01:39:09
+73    | 428473     | scribd.com/doc/35774990/A-Comprehensive- | good            | good                 | Match        | 2025-03-05 01:40:11
+74    | 514115     | dhl-gemist.ru/afhaalbewijs/Afhaalbewijs1 | bad             | good                 | Not Match    | 2025-03-05 01:41:14
+75    | 317367     | dtmdb.com/movie/2002/the_kid_stays_in_th | good            | good                 | Match        | 2025-03-05 01:42:18
+76    | 493389     | 87.184.20.29:443                         | bad             | good                 | Not Match    | 2025-03-05 01:43:21
+77    | 153751     | bungalowbillscw.blogspot.com/2010/12/hik | good            | good                 | Match        | 2025-03-05 01:44:23
+78    | 115736     | catskiing.ca/media/media/js/drive/       | bad             | good                 | Not Match    | 2025-03-05 01:45:26
+79    | 62170      | www.angelfire.com/art/sunsetswa/         | good            | good                 | Match        | 2025-03-05 01:46:29
+80    | 285813     | aurorahistoryboutique.com/ahb-Museum-Sho | good            | good                 | Match        | 2025-03-05 01:47:32
+81    | 231938     | provigoprovigosupermarkets-du.foodpages. | good            | good                 | Match        | 2025-03-05 01:48:34
+82    | 358745     | imdb.com/name/nm0523381/                 | good            | good                 | Match        | 2025-03-05 01:49:37
+83    | 89975      | www.dnd.utwente.nl/topix/software/index. | good            | good                 | Match        | 2025-03-05 01:50:41
+84    | 314231     | dianying.com/en/title/bdg1996            | good            | good                 | Match        | 2025-03-05 01:51:43
+85    | 70972      | www.freebsd.org/copyright/license.html   | good            | good                 | Match        | 2025-03-05 01:52:45
+86    | 87921      | www.dbsonline.com/professional/index.htm | good            | good                 | Match        | 2025-03-05 01:53:48
+87    | 155976     | canadagazette.gc.ca/archives/p1/2006/200 | good            | good                 | Match        | 2025-03-05 01:54:52
+88    | 264092     | 123people.com/s/catherine+faylen         | good            | good                 | Match        | 2025-03-05 01:55:53
+89    | 365737     | jimbooks.com/hb.htm                      | good            | good                 | Match        | 2025-03-05 01:57:01
+90    | 174647     | en.wikipedia.org/wiki/Film_industry      | good            | good                 | Match        | 2025-03-05 01:58:04
+91    | 210786     | mancow.com/pg/jsp/general/bio.jsp        | good            | good                 | Match        | 2025-03-05 01:59:08
+92    | 315709     | docsports.com/schedules/mlb/Oakland.html | good            | good                 | Match        | 2025-03-05 02:00:14
+93    | 444306     | theflyonthewall.com/permalinks/entry.php | good            | good                 | Match        | 2025-03-05 02:01:20
+94    | 2911       | digilander.libero.it/giopappo123/        | bad             | good                 | Not Match    | 2025-03-05 02:02:23
+95    | 491116     | kioskcantinhodaroca.com.br/wp-content/up | bad             | good                 | Not Match    | 2025-03-05 02:03:26
+96    | 513953     | ustadhanif.com/nbv364                    | bad             | good                 | Not Match    | 2025-03-05 02:04:28
+97    | 355113     | houseofnames.com/forcier-family-crest    | good            | good                 | Match        | 2025-03-05 02:05:31
+98    | 305962     | classmates.com/directory/college/Ohio%20 | good            | good                 | Match        | 2025-03-05 02:06:35
+99    | 506640     | alphabet-city.com.au/cbfi1               | bad             | good                 | Not Match    | 2025-03-05 02:07:38
+100   | 48806      | www.biconet.com/flies.html               | good            | good                 | Match        | 2025-03-05 02:08:39
+101   | 20938      | www.fullsure.com/js/?us.battle.net/login | bad             | good                 | Not Match    | 2025-03-05 02:09:42
+102   | 414757     | planetware.com/canada/nouveau-quebec-cdn | good            | good                 | Match        | 2025-03-05 02:10:44
+103   | 122477     | orchidbooks.com.np/.Confirm/Paypal/websc | bad             | good                 | Not Match    | 2025-03-05 02:11:47
+104   | 236559     | sales.riotintoaluminium.com/             | good            | good                 | Match        | 2025-03-05 02:12:51
+105   | 183287     | encyclopedia2.thefreedictionary.com/book | good            | good                 | Match        | 2025-03-05 02:13:55
+106   | 160847     | connect.in.com/barbara-bennett/profile-3 | good            | good                 | Match        | 2025-03-05 02:14:57
+107   | 339213     | flickr.com/photos/jingletown/3703252168/ | good            | good                 | Match        | 2025-03-05 02:15:59
+108   | 225097     | pananewsonline.net/?p=1294               | good            | good                 | Match        | 2025-03-05 02:17:04
+109   | 529592     | accendojuris.com/mbv58gbv                | bad             | good                 | Not Match    | 2025-03-05 02:18:07
+110   | 16579      | www.eletronicacentral.com/xneo/phpThumb/ | bad             | good                 | Not Match    | 2025-03-05 02:19:10
+111   | 305411     | cityofzillah.us/                         | good            | good                 | Match        | 2025-03-05 02:20:12
+112   | 812        | www.paypai.com-service.confirm.cgi-bin.w | bad             | good                 | Not Match    | 2025-03-05 02:21:15
+113   | 171880     | en.wikipedia.org/wiki/Boek               | good            | good                 | Match        | 2025-03-05 02:22:18
+114   | 360847     | imdb.com/title/tt1846155/                | good            | good                 | Match        | 2025-03-05 02:23:22
+115   | 128706     | cmdlin3.com/wp-content/llllllllll/       | bad             | good                 | Not Match    | 2025-03-05 02:24:25
+116   | 486549     | lpmxp2050.com                            | bad             | good                 | Not Match    | 2025-03-05 02:25:28
+117   | 106648     | chuntaacacademy.edu.bd/dropbox/activity. | bad             | good                 | Not Match    | 2025-03-05 02:26:30
+118   | 232551     | pwa.wrestlingx.net/wrestler.php?id=707   | good            | good                 | Match        | 2025-03-05 02:27:33
+119   | 451493     | tripadvisor.com/ShowTopic-g155032-i51-k3 | good            | good                 | Match        | 2025-03-05 02:28:36
+120   | 351315     | highbeam.com/doc/1G1-76996435.html       | good            | good                 | Match        | 2025-03-05 02:29:38
+121   | 534466     | cellmartpk.com/navvmtv                   | bad             | good                 | Not Match    | 2025-03-05 02:30:42
+122   | 334341     | fanbase.com/Frank-Budd                   | good            | good                 | Match        | 2025-03-05 02:31:44
+123   | 422957     | reverbnation.com/venue/346626            | good            | good                 | Match        | 2025-03-05 02:32:46
+124   | 480073     | zoominfo.com/people/Bergeron_St%C3%A9pha | good            | good                 | Match        | 2025-03-05 02:33:49
+125   | 288111     | baseball-almanac.com/teamstats/roster.ph | good            | good                 | Match        | 2025-03-05 02:34:52
+126   | 206887     | lawyers.justia.com/lawyer/michael-massee | good            | good                 | Match        | 2025-03-05 02:35:55
+127   | 277581     | amazon.com/Treasures-III-Social-American | good            | good                 | Match        | 2025-03-05 02:36:58
+128   | 12196      | tharts.net/images/?us.battle.net/login/e | bad             | good                 | Not Match    | 2025-03-05 02:38:01
+129   | 379864     | loyolaprep.org/index.php?src=gendocs&ref | good            | good                 | Match        | 2025-03-05 02:39:03
+130   | 76949      | pagesperso-orange.fr/yves.candau/numlib. | good            | good                 | Match        | 2025-03-05 02:40:06
+131   | 484476     | gold.ozroadie.com.au/dhb4mde1tk\nwww.lav | bad             | good                 | Not Match    | 2025-03-05 02:41:08
+132   | 175225     | en.wikipedia.org/wiki/Great_Britain_men% | good            | good                 | Match        | 2025-03-05 02:42:11
+133   | 336397     | feastmanagement.co.uk/clients/emma_croft | good            | good                 | Match        | 2025-03-05 02:43:14
+134   | 48534      | pets.groups.yahoo.com/group/texasboergoa | good            | good                 | Match        | 2025-03-05 02:44:16
+135   | 313748     | depthoffield.de/                         | good            | good                 | Match        | 2025-03-05 02:45:19
+136   | 474913     | youtube.com/watch?v=WY-_hF-31ow          | good            | good                 | Match        | 2025-03-05 02:46:22
+137   | 323892     | evri.com/organization/17th-iowa-voluntee | good            | good                 | Match        | 2025-03-05 02:47:25
+138   | 300450     | cbc.ca/video/                            | good            | good                 | Match        | 2025-03-05 02:48:29
+139   | 464570     | wikimapia.org/10823410/Sondern-Adler-Hou | good            | good                 | Match        | 2025-03-05 02:49:32
+140   | 268394     | absoluteastronomy.com/topics/Rockhurst_U | good            | good                 | Match        | 2025-03-05 02:50:34
+141   | 331643     | facebook.com/people/Frank-Gorshin/158734 | good            | good                 | Match        | 2025-03-05 02:51:37
+142   | 464932     | wilsonrealestatesales.com/               | good            | good                 | Match        | 2025-03-05 02:52:39
+143   | 97135      | hotfacesitting.com                       | bad             | good                 | Not Match    | 2025-03-05 02:53:41
+144   | 71225      | noel.feld.cvut.cz/magi/                  | good            | good                 | Match        | 2025-03-05 02:54:44
+145   | 180160     | en.wikipedia.org/wiki/Roy_Williams       | good            | good                 | Match        | 2025-03-05 02:55:47
+146   | 518790     | koryo.nicklambdesign.com/wp-content/them | bad             | good                 | Not Match    | 2025-03-05 02:56:50
+147   | 469578     | yelp.com/biz/mikess-ellijay-restaurant-e | good            | good                 | Match        | 2025-03-05 02:57:53
+148   | 136892     | watsonspestcontrol.com.au/loss/drpbxx/dr | bad             | good                 | Not Match    | 2025-03-05 02:58:56
+149   | 51753      | olgol.com/TabooXL/                       | good            | good                 | Match        | 2025-03-05 03:00:00
+150   | 278193     | amazon.com/s?ie=UTF8&keywords=rush%20tom | good            | good                 | Match        | 2025-03-05 03:01:03
+151   | 44105      | vibesjamaica.com/trackpriceplus/bb.com.b | bad             | good                 | Not Match    | 2025-03-05 03:02:05
+152   | 449265     | torrentreactor.net/torrents/2105929/Barr | good            | good                 | Match        | 2025-03-05 03:03:09
+153   | 241075     | sovereign.cigarettesportal.com/          | good            | good                 | Match        | 2025-03-05 03:04:11
+154   | 276617     | amazon.com/Photo-Nomad-David-Douglas-Dun | good            | good                 | Match        | 2025-03-05 03:05:12
+155   | 85088      | en.wikipedia.org/wiki/BIOS               | good            | good                 | Match        | 2025-03-05 03:06:15
+156   | 157101     | celebritiesstalker.com/freeones/brazilia | good            | good                 | Match        | 2025-03-05 03:07:18
+157   | 282864     | archive.org/stream/romanceofmoderni00wil | good            | good                 | Match        | 2025-03-05 03:08:20
+158   | 280282     | answers.com/topic/garage                 | good            | good                 | Match        | 2025-03-05 03:09:23
+159   | 286937     | back2business.ws/                        | good            | good                 | Match        | 2025-03-05 03:10:26
+160   | 457757     | vaimusic.com/index.htm                   | good            | good                 | Match        | 2025-03-05 03:11:29
+161   | 375241     | linkedin.com/in/caitlinamalloy           | good            | good                 | Match        | 2025-03-05 03:12:32
+162   | 68570      | tools.ietf.org/html/rfc2775              | good            | good                 | Match        | 2025-03-05 03:13:35
+163   | 437729     | sportsmemorabilia.com/player/Lily_Tomlin | good            | good                 | Match        | 2025-03-05 03:14:37
+164   | 346268     | goaholidayhomes.com/directory/info/12/tr | good            | good                 | Match        | 2025-03-05 03:15:40
+165   | 174253     | en.wikipedia.org/wiki/Eddie_McGrath      | good            | good                 | Match        | 2025-03-05 03:16:43
+166   | 23440      | www.koprudanismanlik.com.tr/wp-content/t | bad             | good                 | Not Match    | 2025-03-05 03:17:45
+167   | 246141     | thebarksdalebuzz.blogspot.com/           | good            | good                 | Match        | 2025-03-05 03:18:48
+168   | 453510     | tvguide.com/celebrities/dianne-wiest/147 | good            | good                 | Match        | 2025-03-05 03:19:50
+169   | 436515     | spokeo.com/Christopher+Bond              | good            | good                 | Match        | 2025-03-05 03:20:52
+170   | 243297     | steugenecatholicchurch.org/              | good            | good                 | Match        | 2025-03-05 03:21:55
+171   | 310006     | coursehero.com/textbooks/117555-The-Dram | good            | good                 | Match        | 2025-03-05 03:22:58
+172   | 389941     | mixtapetorrent.com/lyrical-homicide      | good            | good                 | Match        | 2025-03-05 03:24:00
+173   | 303313     | cheapoair.com/travel/cheap-flights/air-c | good            | good                 | Match        | 2025-03-05 03:25:03
+174   | 168874     | en-gb.facebook.com/martine.houde         | good            | good                 | Match        | 2025-03-05 03:26:05
+175   | 469617     | yelp.com/biz/no-way-jose-san-jose        | good            | good                 | Match        | 2025-03-05 03:27:09
+176   | 390741     | moed.uscourts.gov/                       | good            | good                 | Match        | 2025-03-05 03:28:11
+177   | 166485     | downloads.khinsider.com/game-soundtracks | good            | good                 | Match        | 2025-03-05 03:29:13
+178   | 443507     | theblurb.ca/professional_services/Michel | good            | good                 | Match        | 2025-03-05 03:30:16
+179   | 208706     | local.yahoo.com/info-13119293-a-c-superm | good            | good                 | Match        | 2025-03-05 03:31:18
+180   | 153211     | broadbandsudamerica.com/                 | good            | good                 | Match        | 2025-03-05 03:32:21
+181   | 417874     | ps3trophies.org/game/team-ico-collection | good            | good                 | Match        | 2025-03-05 03:33:23
+182   | 248689     | topics.nytimes.com/top/reference/timesto | good            | good                 | Match        | 2025-03-05 03:34:26
+183   | 479022     | zachgalifianakis.com/                    | good            | good                 | Match        | 2025-03-05 03:35:29
+184   | 235540     | robichaud.info/data/alpha/c-index.htm    | good            | good                 | Match        | 2025-03-05 03:36:32
+185   | 155406     | ca.ratemyteachers.com/roger-comtois-seco | good            | good                 | Match        | 2025-03-05 03:37:35
+186   | 419265     | qype.co.uk/place/85522-Carette-Paris     | good            | good                 | Match        | 2025-03-05 03:38:37
+187   | 120930     | alpinebutterfly.com/templates/a4joomla-a | bad             | good                 | Not Match    | 2025-03-05 03:39:40
+188   | 369405     | ktsm.com/local/mini-of-el-paso-launches- | good            | good                 | Match        | 2025-03-05 03:40:44
+189   | 268118     | absoluteastronomy.com/topics/Missouri_Ti | good            | good                 | Match        | 2025-03-05 03:41:46
+190   | 335978     | faqs.org/people-search/lafond-illinois/  | good            | good                 | Match        | 2025-03-05 03:42:48
+191   | 197335     | hockeyspy.blogspot.com/2010/06/hockey-sp | good            | good                 | Match        | 2025-03-05 03:43:51
+192   | 430778     | showtimetickets.com/tickets/montreal-can | good            | good                 | Match        | 2025-03-05 03:44:54
+193   | 429563     | servinghistory.com/topics/Zelda_Harris   | good            | good                 | Match        | 2025-03-05 03:45:58
+194   | 520997     | 173.252.220.169/underwater.jpg           | bad             | good                 | Not Match    | 2025-03-05 03:47:01
+195   | 19051      | www.armada-lux.by/0602304069/13435365473 | bad             | good                 | Not Match    | 2025-03-05 03:48:03
+196   | 423696     | rmhorlando.com/                          | good            | good                 | Match        | 2025-03-05 03:49:06
+197   | 117133     | surubiproducciones.com/wp/wp-includes/ID | bad             | good                 | Not Match    | 2025-03-05 03:50:09
+198   | 500123     | csegurosural.com/k57z6d70                | bad             | good                 | Not Match    | 2025-03-05 03:51:13
+199   | 202721     | jeanharlow.info/                         | good            | good                 | Match        | 2025-03-05 03:52:15
+200   | 316119     | docstoc.com/docs/6149133/REPORT-ON-THE-S | good            | good                 | Match        | 2025-03-05 03:53:23
+201   | 333265     | facebook.com/tracy.mortimer              | good            | good                 | Match        | 2025-03-05 03:54:27
+202   | 145075     | articles.latimes.com/1998/jul/12/local/m | good            | good                 | Match        | 2025-03-05 03:55:30
+203   | 161779     | corbettbishop.wordpress.com/             | good            | good                 | Match        | 2025-03-05 03:56:33
+204   | 221052     | news.discovery.com/human/chimp-attack-vi | good            | good                 | Match        | 2025-03-05 03:57:36
+205   | 106587     | ciataime.com/lifechanger/norton/partial/ | bad             | good                 | Not Match    | 2025-03-05 03:58:38
+206   | 118261     | likeus.co.uk/23w.php                     | bad             | good                 | Not Match    | 2025-03-05 03:59:41
+207   | 523384     | coldworld.co.in/workflow/30/cp.php?lette | bad             | good                 | Not Match    | 2025-03-05 04:00:44
+208   | 342259     | freebase.com/view/en/lamerica            | good            | good                 | Match        | 2025-03-05 04:01:46
+209   | 470720     | youtube.com/watch?v=1bdTxcJrBvo          | good            | good                 | Match        | 2025-03-05 04:02:49
+210   | 142799     | answers.yahoo.com/question/index?qid=200 | good            | good                 | Match        | 2025-03-05 04:03:52
+211   | 430574     | shopstyle.co.uk/product/diesel-john-lewi | good            | good                 | Match        | 2025-03-05 04:04:54
+212   | 6330       | tharts.net/images/?app=com-d3&us.battle. | bad             | good                 | Not Match    | 2025-03-05 04:05:56
+213   | 282351     | archive.org/stream/RCN_Beach_Commando_W_ | good            | good                 | Match        | 2025-03-05 04:07:00
+214   | 161077     | connect.in.com/stu-lantz/profile-1891773 | good            | good                 | Match        | 2025-03-05 04:08:04
+215   | 407262     | nudistescapes.com/nudist-colonies-resort | good            | good                 | Match        | 2025-03-05 04:09:07
+216   | 459711     | vietnamproject.ttu.edu/Banshee/JGL.html  | good            | good                 | Match        | 2025-03-05 04:10:09
+217   | 374866     | linkedin.com/directory/people/cornet.htm | good            | good                 | Match        | 2025-03-05 04:11:12
+218   | 419693     | rainbowphotovideo.com/                   | good            | good                 | Match        | 2025-03-05 04:12:15
+219   | 288637     | baseball-reference.com/players/y/yerkeca | good            | good                 | Match        | 2025-03-05 04:13:19
+220   | 152269     | bobbybadon.blogspot.com/                 | good            | good                 | Match        | 2025-03-05 04:14:22
+221   | 9306       | pastehtml.com/view/beblk33zp.html        | bad             | good                 | Not Match    | 2025-03-05 04:15:25
+222   | 466617     | worthpoint.com/worthopedia/knebworth-fai | good            | good                 | Match        | 2025-03-05 04:16:28
+223   | 34994      | www.apmar.org.pl/image/paypal/secure-cod | bad             | good                 | Not Match    | 2025-03-05 04:17:30
+224   | 75201      | lobobrowser.org/cobra.jsp                | good            | good                 | Match        | 2025-03-05 04:18:34
+225   | 355828     | hughchou.org/hugh/                       | good            | good                 | Match        | 2025-03-05 04:19:38
+226   | 338431     | firedupmissouri.com/content/application- | good            | good                 | Match        | 2025-03-05 04:20:41
+227   | 144778     | article.wn.com/view/2011/07/21/Rookie_tr | good            | good                 | Match        | 2025-03-05 04:21:44
+228   | 452131     | trulia.com/NC/Havelock/28532/            | good            | good                 | Match        | 2025-03-05 04:22:45
+229   | 531922     | rasheed.crabdance.com/quantum/ghsnls.php | bad             | good                 | Not Match    | 2025-03-05 04:23:48
+230   | 338816     | flickr.com/people/20657356@N07/          | good            | good                 | Match        | 2025-03-05 04:24:51
+231   | 118693     | galertupdate.com/91783d5e3f199ea772ac02c | bad             | good                 | Not Match    | 2025-03-05 04:25:53
+232   | 231484     | priyeshsinha.com/                        | good            | good                 | Match        | 2025-03-05 04:26:57
+233   | 293465     | blurtit.com/q1941442.html                | good            | good                 | Match        | 2025-03-05 04:28:00
+234   | 254247     | usidentify.com/lisa-cupp                 | good            | good                 | Match        | 2025-03-05 04:29:04
+235   | 5668       | far5.uz/cache/remax/index.htm            | bad             | good                 | Not Match    | 2025-03-05 04:30:07
+236   | 232226     | publications.mcgill.ca/medenews/2011/05/ | good            | good                 | Match        | 2025-03-05 04:31:09
+237   | 298958     | canpages.ca/page/QC/saint-prime/jean-lap | good            | good                 | Match        | 2025-03-05 04:32:12
+238   | 91450      | www.cnn.com/WORLD/europe/9810/13/giant.s | good            | good                 | Match        | 2025-03-05 04:33:15
+239   | 134304     | docanswer.com/wp-includes/pomo/index     | bad             | good                 | Not Match    | 2025-03-05 04:34:18
+240   | 64306      | www.petsinpastel.com/post.htm            | good            | good                 | Match        | 2025-03-05 04:35:20
+241   | 504259     | activexsearch.com/yggv8                  | bad             | good                 | Not Match    | 2025-03-05 04:36:24
+242   | 374317     | lilith-ezine.com/articles/gothic/Killer- | good            | good                 | Match        | 2025-03-05 04:37:27
+243   | 103874     | fingalcsrnetwork.ie/auth/survey/d0cs/dr0 | bad             | good                 | Not Match    | 2025-03-05 04:38:30
+244   | 105086     | info-asi.net/wp-admin/Summary/busines    | bad             | good                 | Not Match    | 2025-03-05 04:39:33
+245   | 174237     | en.wikipedia.org/wiki/Ed_Sanders         | good            | good                 | Match        | 2025-03-05 04:40:36
+246   | 468016     | yasni.com/charles+stevenson/check+people | good            | good                 | Match        | 2025-03-05 04:41:39
+247   | 267020     | absoluteastronomy.com/topics/2011_NCAA_M | good            | good                 | Match        | 2025-03-05 04:42:41
+248   | 156093     | canadianpassportsupport.com/birth-certif | good            | good                 | Match        | 2025-03-05 04:43:44
+249   | 229216     | pipl.com/directory/name/Whissell/180     | good            | good                 | Match        | 2025-03-05 04:44:46
+250   | 105365     | mylife.si/denar/plugins/Gdrived/e98f7f01 | bad             | good                 | Not Match    | 2025-03-05 04:45:49
+251   | 146154     | asteria.fivecolleges.edu/findaids/sophia | good            | good                 | Match        | 2025-03-05 04:46:51
+252   | 447629     | time.com/time/magazine/article/0%2C9171% | good            | good                 | Match        | 2025-03-05 04:47:54
+253   | 67576      | tools.ietf.org/html/rfc1666              | good            | good                 | Match        | 2025-03-05 04:48:57
+254   | 234156     | reddead.wikia.com/wiki/Benjamin_Dupuis   | good            | good                 | Match        | 2025-03-05 04:50:00
+255   | 417904     | psmove.org/                              | good            | good                 | Match        | 2025-03-05 04:51:03
+256   | 245328     | tasca-navarre.tripod.com/                | good            | good                 | Match        | 2025-03-05 04:52:05
+257   | 362208     | infoukes.com/galiciadivision/            | good            | good                 | Match        | 2025-03-05 04:53:09
+258   | 460857     | vitals.com/doctors/geriatricist_ny_7.htm | good            | good                 | Match        | 2025-03-05 04:54:11
+259   | 176377     | en.wikipedia.org/wiki/Johanne_Gauthier   | good            | good                 | Match        | 2025-03-05 04:55:13
+260   | 245470     | teamsports.sayhideals.com/spalding-44-in | good            | good                 | Match        | 2025-03-05 04:56:16
+261   | 110589     | modernyear.com/autodomain/adddomain/doma | bad             | good                 | Not Match    | 2025-03-05 04:57:18
+262   | 254723     | velonews.competitor.com/2011/09/news/too | good            | good                 | Match        | 2025-03-05 04:58:20
+263   | 263315     | 123people.ca/s/ralph+barton              | good            | good                 | Match        | 2025-03-05 04:59:22
+264   | 405747     | nme.com/reviews/the-besnard-lakes--2/111 | good            | good                 | Match        | 2025-03-05 05:00:25
+265   | 540122     | www2.sendsecuremail.com/bellevue/Violati | bad             | good                 | Not Match    | 2025-03-05 05:01:26
+266   | 177916     | en.wikipedia.org/wiki/Marc_Caron         | good            | good                 | Match        | 2025-03-05 05:02:29
+267   | 416588     | preskoteam.com/                          | good            | good                 | Match        | 2025-03-05 05:03:31
+268   | 271832     | allhighschools.com/school/john-burroughs | good            | good                 | Match        | 2025-03-05 05:04:34
+269   | 431912     | skyscrapercity.com/showthread.php?t=1239 | good            | good                 | Match        | 2025-03-05 05:05:36
+270   | 304315     | chud.com/community/t/56835/mary-ellis-bu | good            | good                 | Match        | 2025-03-05 05:06:40
+271   | 537928     | privacy-ukr.net/                         | bad             | good                 | Not Match    | 2025-03-05 05:07:42
+272   | 180545     | en.wikipedia.org/wiki/Shelley_Berman     | good            | good                 | Match        | 2025-03-05 05:08:44
+273   | 78601      | it.slashdot.org/article.pl?sid=07/05/15/ | good            | good                 | Match        | 2025-03-05 05:09:47
+274   | 203379     | joeysalazar.org/                         | good            | good                 | Match        | 2025-03-05 05:10:50
+275   | 123200     | hosttoday.org/adminftp/hotmail/hotmail/  | bad             | good                 | Not Match    | 2025-03-05 05:11:52
+276   | 10380      | hlanz.org/billing/system/info/update/web | bad             | good                 | Not Match    | 2025-03-05 05:12:55
+277   | 253160     | uk.reuters.com/article/2011/05/31/uk-ten | good            | good                 | Match        | 2025-03-05 05:13:58
+278   | 455067     | umary.edu/athletics/men/basketball.php   | good            | good                 | Match        | 2025-03-05 05:15:02
+279   | 330238     | facebook.com/pages/Providence-High-Schoo | good            | good                 | Match        | 2025-03-05 05:16:05
+280   | 460484     | visitsomerset.com/pages/events.html      | good            | good                 | Match        | 2025-03-05 05:17:08
+281   | 226925     | people.famouswhy.com/steven_benjamin_dav | good            | good                 | Match        | 2025-03-05 05:18:11
+282   | 530325     | qosmvyuuwoklly.pl/upload/_dispatch.php   | bad             | good                 | Not Match    | 2025-03-05 05:19:14
+283   | 158773     | cjal149apwu.org/                         | good            | good                 | Match        | 2025-03-05 05:20:17
+284   | 458284     | veromi.com/BusinessDetailPg000007225.asp | good            | good                 | Match        | 2025-03-05 05:21:21
+285   | 227484     | phantomthemovie.warnerbros.com/          | good            | good                 | Match        | 2025-03-05 05:22:22
+286   | 444464     | thefreedictionary.com/Vultures           | good            | good                 | Match        | 2025-03-05 05:23:26
+287   | 314290     | dictionary30.com/meaning/Gesellschaft    | good            | good                 | Match        | 2025-03-05 05:24:29
+288   | 400655     | myspace.com/steadymobbnmusic/music/album | good            | good                 | Match        | 2025-03-05 05:25:33
+289   | 367773     | kchistory.org/cdm4/local-subjects-2.php? | good            | good                 | Match        | 2025-03-05 05:26:36
+290   | 409288     | olpatentlaw.com/lortiz.html              | good            | good                 | Match        | 2025-03-05 05:27:39
+291   | 178096     | en.wikipedia.org/wiki/Matthew_Lloyd      | good            | good                 | Match        | 2025-03-05 05:28:43
+292   | 385095     | marketwire.com/press-release/2010-11-nad | good            | good                 | Match        | 2025-03-05 05:29:45
+293   | 161495     | content.usatoday.com/sportsdata/basketba | good            | good                 | Match        | 2025-03-05 05:30:53
+294   | 544728     | shangtaomao.com/878hf33f34f              | bad             | good                 | Not Match    | 2025-03-05 05:31:56
+295   | 38450      | www.hncxin.com/js/?us.battle.net/login/e | bad             | good                 | Not Match    | 2025-03-05 05:32:59
+296   | 497414     | lkfashions.com/3vkh8fcv                  | bad             | good                 | Not Match    | 2025-03-05 05:34:01
+297   | 477184     | youtube.com/watch?v=meA2I9plWxE          | good            | good                 | Match        | 2025-03-05 05:35:05
+298   | 402281     | nbcactionnews.com/dpp/lifestyle/fashion/ | good            | good                 | Match        | 2025-03-05 05:36:08
+299   | 132785     | denizlideevdenevenakliyat.com/document/p | bad             | good                 | Not Match    | 2025-03-05 05:37:11
+300   | 366723     | juggle.com/eve-plumb                     | good            | good                 | Match        | 2025-03-05 05:38:13
+301   | 499278     | zjfq4lnfbs7pncr5.tor2web.org/            | bad             | good                 | Not Match    | 2025-03-05 05:39:16
+302   | 141020     | aibakaland.forumup.org/viewforum.php?f=5 | good            | good                 | Match        | 2025-03-05 05:40:19
+303   | 127419     | iasdband.com.br/wd/authentica/auth/view/ | bad             | good                 | Not Match    | 2025-03-05 05:41:23
+304   | 45227      | www999.paypal.co.uk.45579.ssl-780.mx/js/ | bad             | good                 | Not Match    | 2025-03-05 05:42:26
+305   | 40634      | '9d345009-a-62cb3a1a-s-sites.googlegroup | bad             | bad                  | Match        | 2025-03-05 05:43:28
+306   | 71149      | i1.dk/download/ihttpd/index.html         | good            | good                 | Match        | 2025-03-05 05:44:31
+307   | 124624     | secured-information.net/signin/247966DC7 | bad             | good                 | Not Match    | 2025-03-05 05:45:33
+308   | 394177     | muse.ca/en/news.aspx                     | good            | good                 | Match        | 2025-03-05 05:46:36
+309   | 420750     | realsexedfacts.com/                      | good            | good                 | Match        | 2025-03-05 05:47:39
+310   | 247014     | theodorebruceauctions.com.au/            | good            | good                 | Match        | 2025-03-05 05:48:40
+311   | 538344     | hollywoodjesus.com/movie/fat_albert/09.j | bad             | good                 | Not Match    | 2025-03-05 05:49:44
+312   | 65088      | home.neopets.com/templates/homepage.phtm | good            | good                 | Match        | 2025-03-05 05:50:48
+313   | 320690     | elephantjournal.com/2008/08/im-in-love-w | good            | good                 | Match        | 2025-03-05 05:51:51
+314   | 116168     | meteoland.org/modules/mod_poll/tmpl/iv.h | bad             | good                 | Not Match    | 2025-03-05 05:52:54
+315   | 56416      | www.isa.org/MSTemplate.cfm?MicrositeID=1 | good            | good                 | Match        | 2025-03-05 05:53:57
+316   | 63554      | en.wikipedia.org/wiki/Raymond_Kurzweil   | good            | good                 | Match        | 2025-03-05 05:54:59
+317   | 478224     | youtube.com/watch?v=ucGO6LkST8Y          | good            | good                 | Match        | 2025-03-05 05:56:02
+318   | 16907      | kathydunnehoff.com/wp-content/plugins/si | bad             | good                 | Not Match    | 2025-03-05 05:57:05
+319   | 100262     | gcweb.ir/eb/ALL/                         | bad             | good                 | Not Match    | 2025-03-05 05:58:07
+320   | 507363     | fungasoap.net/67j5hg                     | bad             | good                 | Not Match    | 2025-03-05 05:59:10
+321   | 448721     | topix.com/summer-sports/eric-lamaze      | good            | good                 | Match        | 2025-03-05 06:00:13
+322   | 224740     | oursalesmanager.com/                     | good            | good                 | Match        | 2025-03-05 06:01:16
+323   | 376227     | linkedin.com/pub/denis-chouinard/1/732/8 | good            | good                 | Match        | 2025-03-05 06:02:18
+324   | 380453     | lyricsfreak.com/a/alice+in+chains/hate+t | good            | good                 | Match        | 2025-03-05 06:03:22
+325   | 233161     | radio3.cbc.ca/blogs/2011/9/Arcade-Fire-L | good            | good                 | Match        | 2025-03-05 06:04:25
+326   | 272549     | allstarpics.net/pic-gallery/darcy-rose-b | good            | good                 | Match        | 2025-03-05 06:05:29
+327   | 276769     | amazon.com/Quest-Consciousness-Neurobiol | good            | good                 | Match        | 2025-03-05 06:06:32
+328   | 378773     | loc.gov/rr/hispanic/francophonie/francop | good            | good                 | Match        | 2025-03-05 06:07:34
+329   | 218887     | muzlolo.org/682/simple+plan+album+deluxe | good            | good                 | Match        | 2025-03-05 06:08:36
+330   | 13433      | 'www.ccswy.com/css/?us.battle.net/login/ | bad             | bad                  | Match        | 2025-03-05 06:09:38
+331   | 377002     | linkedin.com/pub/george-hodges/11/b81/49 | good            | good                 | Match        | 2025-03-05 06:10:42
+332   | 478741     | youtube.com/watch?v=yToEYmJ6Z3k          | good            | good                 | Match        | 2025-03-05 06:11:45
+333   | 308384     | commonsensemedia.org/website-reviews/dis | good            | good                 | Match        | 2025-03-05 06:12:47
+334   | 176252     | en.wikipedia.org/wiki/Jessica_Bangkok    | good            | good                 | Match        | 2025-03-05 06:13:50
+335   | 26098      | mnsg4.com/en/us/cgi-bin/webscr8558.html? | bad             | good                 | Not Match    | 2025-03-05 06:14:53
+336   | 489912     | instromenmendous.casolagreenhouse.com/pe | bad             | good                 | Not Match    | 2025-03-05 06:15:56
+337   | 465117     | wired.com/magazine/2010/08/ff_webrip/all | good            | good                 | Match        | 2025-03-05 06:16:59
+338   | 199832     | illicoweb.videotron.com/illicoweb/all-ch | good            | good                 | Match        | 2025-03-05 06:18:01
+339   | 540194     | holmebjerg.dk/hgf65g                     | bad             | good                 | Not Match    | 2025-03-05 06:19:05
+340   | 49350      | www.taylormadeproductions.com/MusicDemos | good            | good                 | Match        | 2025-03-05 06:20:07
+341   | 276897     | amazon.com/Road-Runner-Large-Keyboard-Co | good            | good                 | Match        | 2025-03-05 06:21:11
+342   | 321013     | elyrics.net/read/d/daniel-belanger-lyric | good            | good                 | Match        | 2025-03-05 06:22:14
+343   | 245607     | telegraphjournal.canadaeast.com/actualit | good            | good                 | Match        | 2025-03-05 06:23:17
+344   | 395882     | mylife.com/c-2219393648                  | good            | good                 | Match        | 2025-03-05 06:24:22
+345   | 136374     | caxtons.whodigital.com/LORDS/ipad/ipad/D | bad             | good                 | Not Match    | 2025-03-05 06:25:28
+346   | 29332      | us.battle.net.login.en.ea-login.com/logi | bad             | good                 | Not Match    | 2025-03-05 06:26:30
+347   | 418872     | quazal.com/                              | good            | good                 | Match        | 2025-03-05 06:27:34
+348   | 214728     | montreal.about.com/od/montrealartscultur | good            | good                 | Match        | 2025-03-05 06:28:36
+349   | 198770     | humber.northnet.org/vilgrnconcerts/V.G.C | good            | good                 | Match        | 2025-03-05 06:29:39
+350   | 508143     | hedsarowlitt.ru/h/gate.php               | bad             | good                 | Not Match    | 2025-03-05 06:30:45
+351   | 504900     | scottygooding.com.au/t76f3g              | bad             | good                 | Not Match    | 2025-03-05 06:31:50
+352   | 219305     | n4g.com/news/851202/fumito-ueda-says-the | good            | good                 | Match        | 2025-03-05 06:32:54
+353   | 537688     | dmsoinfo.com/razk3                       | bad             | good                 | Not Match    | 2025-03-05 06:33:56
+354   | 204846     | kbay.com.kh/                             | good            | good                 | Match        | 2025-03-05 06:34:58
+355   | 373622     | lexisone.com/lx1/caselaw/freecaselaw?act | good            | good                 | Match        | 2025-03-05 06:36:00
+356   | 386302     | mcgill.ca/reporter/34/03/stadium/        | good            | good                 | Match        | 2025-03-05 06:37:04
+357   | 529462     | babycotsonline.com/ph42q6ue              | bad             | good                 | Not Match    | 2025-03-05 06:38:08
+358   | 79498      | mainline.brynmawr.edu/Robots/ResourceKit | good            | good                 | Match        | 2025-03-05 06:39:12
+359   | 123951     | restaurantejequitiba.com.br/wp-content/u | bad             | good                 | Not Match    | 2025-03-05 06:40:15
+360   | 48181      | www.heartwoods.com/html/barn_wood.html   | good            | good                 | Match        | 2025-03-05 06:41:18
+361   | 326129     | facebook.com/MyDorchester                | good            | good                 | Match        | 2025-03-05 06:42:20
+362   | 1054       | radio-martin.hr/remax/index.htm          | bad             | good                 | Not Match    | 2025-03-05 06:43:24
+363   | 378272     | literotica.com/s/taken-by-two-boys       | good            | good                 | Match        | 2025-03-05 06:44:26
+364   | 487897     | 67.23.255.34/~comentar/Face/Facebook_Com | bad             | good                 | Not Match    | 2025-03-05 06:45:29
+365   | 254489     | va.milesplit.com/teams/GW                | good            | good                 | Match        | 2025-03-05 06:46:32
+366   | 210010     | lynsweb.com/                             | good            | good                 | Match        | 2025-03-05 06:47:35
+367   | 288746     | baseball-statistics.com/HOF/Rogan.html   | good            | good                 | Match        | 2025-03-05 06:48:38
+368   | 19767      | x45m8769.3web.me/                        | bad             | good                 | Not Match    | 2025-03-05 06:49:42
+369   | 373396     | letrs.indiana.edu/cgi/t/text/text-idx?c= | good            | good                 | Match        | 2025-03-05 06:50:50
+370   | 78504      | 'www.pearsonhighered.com/educator/academ | good            | good                 | Match        | 2025-03-05 06:51:52
+371   | 225615     | pdc.wikipedia.org/wiki/Sam_Roberts       | good            | good                 | Match        | 2025-03-05 06:52:57
+372   | 52634      | www.math.uiuc.edu/ResearchAreas/actsci.h | good            | good                 | Match        | 2025-03-05 06:53:59
+373   | 548862     | 195.22.127.233:80/rec/fre.php            | bad             | good                 | Not Match    | 2025-03-05 06:55:01
+374   | 93675      | www.pathguy.com/krynn.htm                | good            | good                 | Match        | 2025-03-05 06:56:04
+375   | 237582     | seadoosportboats.com/topic/1982-new-to-m | good            | good                 | Match        | 2025-03-05 06:57:07
+376   | 414354     | pitch.com/                               | good            | good                 | Match        | 2025-03-05 06:58:10
+377   | 153858     | business.financialpost.com/2011/02/22/bo | good            | good                 | Match        | 2025-03-05 06:59:13
+378   | 235317     | rivals.yahoo.com/ncaa/football/recruitin | good            | good                 | Match        | 2025-03-05 07:00:16
+379   | 376786     | linkedin.com/pub/dir/richard/lotz        | good            | good                 | Match        | 2025-03-05 07:01:19
+380   | 544035     | fjlpilrgdsxada.info/information.cgi      | bad             | good                 | Not Match    | 2025-03-05 07:02:23
+381   | 318044     | easternpromisesthemovie.co.uk/           | good            | good                 | Match        | 2025-03-05 07:03:25
+382   | 163616     | daytimeconfidential.zap2it.com/news/cady | good            | good                 | Match        | 2025-03-05 07:04:33
+383   | 81174      | pear.php.net/package/DB_Sqlite_Tools     | good            | good                 | Match        | 2025-03-05 07:05:36
+384   | 301818     | cellphonebeat.com/entry/openmoko-neo-fre | good            | good                 | Match        | 2025-03-05 07:06:38
+385   | 312020     | dailymotion.com/video/xi0p4x_sin-nombre- | good            | good                 | Match        | 2025-03-05 07:07:41
+386   | 239311     | simmonsfield.blogspot.com/2011/05/big-12 | good            | good                 | Match        | 2025-03-05 07:08:43
+387   | 273593     | amazon.co.uk/Inside-Im-Dancing-DVD/dp/B0 | good            | good                 | Match        | 2025-03-05 07:09:46
+388   | 540518     | 31.41.44.164/upd/14                      | bad             | good                 | Not Match    | 2025-03-05 07:10:49
+389   | 161858     | corporate.univision.com/2007/05/disney-a | good            | good                 | Match        | 2025-03-05 07:11:51
+390   | 115407     | lafayettebeauty.net/wp-content/plugins/c | bad             | good                 | Not Match    | 2025-03-05 07:12:54
+391   | 397092     | mylife.com/jimlillie                     | good            | good                 | Match        | 2025-03-05 07:13:56
+392   | 522275     | 6i3cb6owitcouepv.mywa2pay.com/img/style. | bad             | good                 | Not Match    | 2025-03-05 07:14:59
+393   | 147177     | azurretirementhomes.com/contact          | good            | good                 | Match        | 2025-03-05 07:16:01
+394   | 445193     | theglobeandmail.com/news/national/toront | good            | good                 | Match        | 2025-03-05 07:17:04
+395   | 125508     | ip-184-168-166-154.ip.secureserver.net/w | bad             | good                 | Not Match    | 2025-03-05 07:18:09
+396   | 423707     | rnbaseball.com/VarsityRoster.shtml       | good            | good                 | Match        | 2025-03-05 07:19:11
+397   | 165015     | dictionary.sensagent.com/club+atlético+r | good            | good                 | Match        | 2025-03-05 07:20:15
+398   | 496685     | 210.171.0.30/~akfa8701/76p9su            | bad             | good                 | Not Match    | 2025-03-05 07:21:20
+399   | 223227     | ocw.tufts.edu/Course/13                  | good            | good                 | Match        | 2025-03-05 07:22:23
+400   | 164422     | design-integration.net/                  | good            | good                 | Match        | 2025-03-05 07:23:26
+401   | 310673     | crowncenterofficespace.com/amenities.htm | good            | good                 | Match        | 2025-03-05 07:24:30
+402   | 211629     | matt.wordpress.com/2006/04/06/ralph-wald | good            | good                 | Match        | 2025-03-05 07:25:33
+403   | 66472      | tools.ietf.org/html/rfc398               | good            | good                 | Match        | 2025-03-05 07:26:35
+404   | 342893     | freeprnow.com/pr/world-premier-video-fro | good            | good                 | Match        | 2025-03-05 07:27:38
+405   | 276249     | amazon.com/Moonlight-Lily-Carrie-Emma-We | good            | good                 | Match        | 2025-03-05 07:28:41
+406   | 520437     | www.cpeconsultores.com/tmp/pack.tar.gz   | bad             | good                 | Not Match    | 2025-03-05 07:29:44
+407   | 116643     | uukis.com/dhl.php                        | bad             | good                 | Not Match    | 2025-03-05 07:30:47
+408   | 368134     | kentuckycenter.org/                      | good            | good                 | Match        | 2025-03-05 07:31:50
+409   | 161409     | content.usatoday.com/community/tags/topi | good            | good                 | Match        | 2025-03-05 07:32:52
+410   | 158320     | chroniclingamerica.loc.gov/lccn/sn840281 | good            | good                 | Match        | 2025-03-05 07:33:55
+411   | 259901     | wmpoweruser.mobify.me/                   | good            | good                 | Match        | 2025-03-05 07:34:56
+412   | 338968     | flickr.com/photos/83379080@N00/sets/7215 | good            | good                 | Match        | 2025-03-05 07:35:58
+413   | 508476     | pardijusat.ru/gate.php                   | bad             | good                 | Not Match    | 2025-03-05 07:37:01
+414   | 66336      | tools.ietf.org/html/rfc227               | good            | good                 | Match        | 2025-03-05 07:38:06
+415   | 277225     | amazon.com/Spain-My-Heart-Songs-Spanish/ | good            | good                 | Match        | 2025-03-05 07:39:08
+416   | 481955     | youmix.co.uk/track/400452                | good            | good                 | Match        | 2025-03-05 07:40:11
+417   | 491301     | lawaco.com.vn/hh/cp.php?m=login          | bad             | good                 | Not Match    | 2025-03-05 07:41:15
+418   | 147368     | badoo.com/028225988/                     | good            | good                 | Match        | 2025-03-05 07:42:18
+419   | 174206     | en.wikipedia.org/wiki/East_Fife_FC       | good            | good                 | Match        | 2025-03-05 07:43:20
+420   | 181326     | en.wikipedia.org/wiki/The_Pembroke_Hill_ | good            | good                 | Match        | 2025-03-05 07:44:22
+421   | 48546      | tech.groups.yahoo.com/group/homedairygoa | good            | good                 | Match        | 2025-03-05 07:45:25
+422   | 114807     | sauceonsidestudios.com/wp-includes/post- | bad             | good                 | Not Match    | 2025-03-05 07:46:26
+423   | 264959     | 192.com/atoz/people/harrison/bernice/    | good            | good                 | Match        | 2025-03-05 07:47:28
+424   | 169823     | en.wikilib.com/wiki/Football_%28soccer%2 | good            | good                 | Match        | 2025-03-05 07:48:30
+425   | 35294      | 'www.cpiano.com/js/?amp;app=com-d3&amp;r | bad             | bad                  | Match        | 2025-03-05 07:49:32
+426   | 469690     | yelp.com/biz/richards-drive-in-easton    | good            | good                 | Match        | 2025-03-05 07:50:35
+427   | 95085      | www.angelfire.com/ego/l5rphilippines/    | good            | good                 | Match        | 2025-03-05 07:51:38
+428   | 257421     | web.me.com/angelinekimkyna/Site/Resume.h | good            | good                 | Match        | 2025-03-05 07:52:39
+429   | 496836     | kickboxing.cba.pl/09y7gnninj             | bad             | good                 | Not Match    | 2025-03-05 07:53:42
+430   | 22441      | zc64cpalz.blogspot.ca/                   | bad             | good                 | Not Match    | 2025-03-05 07:54:46
+431   | 526426     | 89.231.1.19/~mkisielewicz/54t4f4f/7u65j5 | bad             | good                 | Not Match    | 2025-03-05 07:55:47
+432   | 46169      | paypal.com.us.cgi.bin.webscr.cmd.login.m | bad             | good                 | Not Match    | 2025-03-05 07:56:49
+433   | 285431     | athleticsnation.com/2009/3/23/806400/an- | good            | good                 | Match        | 2025-03-05 07:57:52
+434   | 372752     | legacy.com/obituaries/timesunion/obituar | good            | good                 | Match        | 2025-03-05 07:58:55
+435   | 202825     | jeffurso.com/                            | good            | good                 | Match        | 2025-03-05 07:59:57
+436   | 78943      | researchweb.watson.ibm.com/ismm04/       | good            | good                 | Match        | 2025-03-05 08:01:02
+437   | 432868     | soap.com/subcat=Laundry-5048?myfavecateg | good            | good                 | Match        | 2025-03-05 08:02:04
+438   | 275763     | amazon.com/Karanga-Chapo/dp/B002NTN918   | good            | good                 | Match        | 2025-03-05 08:03:07
+439   | 211626     | matsuyaney.tumblr.com/post/12314226555   | good            | good                 | Match        | 2025-03-05 08:04:11
+440   | 357397     | imavision.com/en/                        | good            | good                 | Match        | 2025-03-05 08:05:20
+441   | 13230      | albertocoto.com/media/system/css/        | bad             | good                 | Not Match    | 2025-03-05 08:06:24
+442   | 378643     | livingwithout.com/                       | good            | good                 | Match        | 2025-03-05 08:07:28
+443   | 494268     | 158.255.193.15:4331/2/5GKESykA88VV9kVk_l | bad             | good                 | Not Match    | 2025-03-05 08:08:31
+444   | 151960     | boards.ancestry.com/surnames.grandpre/68 | good            | good                 | Match        | 2025-03-05 08:09:33
+445   | 68775      | tools.ietf.org/html/rfc2985              | good            | good                 | Match        | 2025-03-05 08:10:36
+446   | 234606     | repositories.lib.utexas.edu/handle/2152/ | good            | good                 | Match        | 2025-03-05 08:11:39
+447   | 481581     | yachts-interior.com/tag/christina-o/     | good            | good                 | Match        | 2025-03-05 08:12:43
+448   | 507741     | airogap.com/rss/feed/stream              | bad             | good                 | Not Match    | 2025-03-05 08:13:45
+449   | 517910     | patiefreleng-tablewise.digital-downloads | bad             | good                 | Not Match    | 2025-03-05 08:59:42
+450   | 82685      | www.faqs.org/faqs/graphics/renderman-faq | good            | good                 | Match        | 2025-03-05 09:00:45
+451   | 469860     | yelp.com/biz/your-black-muslim-bakery-oa | good            | good                 | Match        | 2025-03-05 09:01:47
+452   | 469357     | yelp.com/biz/equator-books-venice        | good            | good                 | Match        | 2025-03-05 09:02:50
+453   | 466435     | worthpoint.com/worthopedia/1962-topps-ma | good            | good                 | Match        | 2025-03-05 09:03:52
+454   | 169677     | en.memory-alpha.org/wiki/Michele_Scarabe | good            | good                 | Match        | 2025-03-05 09:04:56
+455   | 407312     | nunesmagician.com/2011/7/5/2259785/kris- | good            | good                 | Match        | 2025-03-05 10:14:12
+456   | 321091     | elyrics.net/song/c/common-lyrics.html    | good            | good                 | Match        | 2025-03-05 10:15:14
+457   | 393728     | msuspartans.com/sports/m-baskbl/sched/ms | good            | good                 | Match        | 2025-03-05 10:16:17
+458   | 265874     | 4shared.com/file/Nn8m0S7h/Ex_Deo_-_Romul | good            | good                 | Match        | 2025-03-05 10:17:19
+459   | 277385     | amazon.com/Tales-Missouri-Tigers-Alan-Go | good            | good                 | Match        | 2025-03-05 10:18:22
+460   | 375566     | linkedin.com/in/kimalden                 | good            | good                 | Match        | 2025-03-05 10:19:27
+461   | 443825     | thecanadianencyclopedia.com/index.cfm?Pg | good            | good                 | Match        | 2025-03-05 10:20:29
+462   | 156215     | canucks.nhl.com/club/page.htm?id=40199   | good            | good                 | Match        | 2025-03-05 10:21:32
+463   | 293343     | bluegrassjournal.com/2011/08/29/the-boxc | good            | good                 | Match        | 2025-03-05 10:22:35
+464   | 96275      | fkhfgfg.tk/123/load.php?file=0           | bad             | good                 | Not Match    | 2025-03-05 10:23:38
+465   | 352895     | hockeyfights.com/players/2858            | good            | good                 | Match        | 2025-03-05 10:24:46
+466   | 274444     | amazon.com/Choice-Consequence-Thomas-C-S | good            | good                 | Match        | 2025-03-05 10:25:49
+467   | 482600     | creativecommons.org/fellows              | good            | good                 | Match        | 2025-03-05 10:26:53
+468   | 418886     | quebec-hotels.net/cities/Vaudreuil-Dorio | good            | good                 | Match        | 2025-03-05 10:27:56
+469   | 460276     | virtualtourist.com/travel/North_America/ | good            | good                 | Match        | 2025-03-05 10:28:59
+470   | 92457      | www.streetgangs.com/homies               | good            | good                 | Match        | 2025-03-05 10:30:03
+471   | 478040     | youtube.com/watch?v=tAh_n15s84o          | good            | good                 | Match        | 2025-03-05 10:31:06
+472   | 311397     | cvent.com/events/maximizing-california-e | good            | good                 | Match        | 2025-03-05 10:32:09
+473   | 182934     | encycl.opentopia.com/term/Allan_Cup      | good            | good                 | Match        | 2025-03-05 10:33:12
+474   | 448049     | tngenweb.org/bradley/b_gdsp.htm          | good            | good                 | Match        | 2025-03-05 10:34:15
+475   | 71563      | www.ibm.com/developerworks/webservices/l | good            | good                 | Match        | 2025-03-05 10:35:18
+476   | 497727     | dentallabor-rott.de/typo3/interfaces/adm | bad             | good                 | Not Match    | 2025-03-05 10:36:21
+477   | 200488     | inoviacapital.com/2011/09/gamerizon/     | good            | good                 | Match        | 2025-03-05 10:37:24
+478   | 444365     | thefreedictionary.com/Cook%2c+Thomas     | good            | good                 | Match        | 2025-03-05 10:38:26
+479   | 395849     | mylife.com/c-2144627775                  | good            | good                 | Match        | 2025-03-05 10:39:27
+480   | 340716     | footballdb.com/players.html?letter=F     | good            | good                 | Match        | 2025-03-05 10:40:30
+481   | 268575     | absoluteastronomy.com/topics/Terry_Evans | good            | good                 | Match        | 2025-03-05 10:41:31
+482   | 76542      | elica.net/site/papers/papers.html        | good            | good                 | Match        | 2025-03-05 10:42:34
+483   | 262600     | etud.iro.umontreal.ca/~petitg/cpp/matrix | good            | good                 | Match        | 2025-03-05 10:43:37
+484   | 326618     | facebook.com/billingssymphony            | good            | good                 | Match        | 2025-03-05 10:44:39
+485   | 280612     | answers.com/topic/laurendeau             | good            | good                 | Match        | 2025-03-05 10:45:42
+486   | 322600     | entertainmentcareers.net/company/?Compan | good            | good                 | Match        | 2025-03-05 10:46:45
+487   | 538743     | econopaginas.com/nyx37ec?eujhnelmax=fivp | bad             | good                 | Not Match    | 2025-03-05 10:47:49
+488   | 70961      | www.forbes.com/forbes/1999/0809/6403122a | good            | good                 | Match        | 2025-03-05 10:48:55
+489   | 215324     | motorcitybengals.com/2011/11/01/what-abo | good            | good                 | Match        | 2025-03-05 10:50:02
+490   | 109251     | vynsoft.com/avail/soft                   | bad             | good                 | Not Match    | 2025-03-05 10:51:04
+491   | 157735     | chefmoz.org/Canada/QC/Montreal-Nord/     | good            | good                 | Match        | 2025-03-05 10:52:07
+492   | 379259     | lonelyplanet.com/south-africa            | good            | good                 | Match        | 2025-03-05 10:53:09
+493   | 357054     | ilfordlab.com/page/57/Black-and-White-Pr | good            | good                 | Match        | 2025-03-05 10:54:11
+494   | 61505      | sourceforge.net/projects/mime-dir-j/     | good            | good                 | Match        | 2025-03-05 10:55:17
+495   | 123560     | clccdc.com/libraries/openid/Auth/OpenID/ | bad             | good                 | Not Match    | 2025-03-05 10:56:19
+496   | 69548      | www.pointafter.com/tips_techniques.htm   | good            | good                 | Match        | 2025-03-05 10:57:23
+497   | 254751     | venturebeatprofiles.com/company/profile/ | good            | good                 | Match        | 2025-03-05 10:58:24
+498   | 210471     | mafianewsreport.com/montreal-mobster-nic | good            | good                 | Match        | 2025-03-05 10:59:27
+499   | 275141     | amazon.com/Forest-Pipes-Disney-Concert-O | good            | good                 | Match        | 2025-03-05 11:00:29
+500   | 515740     | sallykandymandy.top/search.php           | bad             | good                 | Not Match    | 2025-03-05 11:01:31
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Total mismatches : 120
+Percentage of mismatches: 120/500 * 100 = 24%

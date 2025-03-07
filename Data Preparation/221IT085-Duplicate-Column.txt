@@ -1,0 +1,12 @@
+Phishing Extracted Features Duplicate Columns - 221IT085
+
+Column Index: 13, Column Name: tilde_count
+Column Index: 27, Column Name: https_token
+Column Index: 59, Column Name: brand_in_subdomain
+Column Index: 85, Column Name: whois_registration
+Column Index: 86, Column Name: domain_registration_length
+Column Index: 87, Column Name: domain_age
+Column Index: 95, Column Name: server_or_client_in_domain
+Column Index: 97, Column Name: asn
+Column Index: 98, Column Name: domain_activation_time
+Column Index: 99, Column Name: domain_expiration_time

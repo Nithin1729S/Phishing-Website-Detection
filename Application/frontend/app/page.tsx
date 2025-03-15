@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Shield, ShieldAlert, ChevronDown, ChevronUp, Globe } from 'lucide-react';
+import { Shield, ShieldAlert, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/collapsible';
 
 interface PhishingResponse {
-  isPhishing: boolean;
-  features: { [key: string]: string | number };
+  prediction: string; // "good" or "bad"
+  [key: string]: string | number; // Dynamic key-value pairs for features
 }
 
 export default function Home() {
@@ -26,13 +26,12 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     try {
-      // Replace with your actual API endpoint
-      const response = await fetch('/api/check-phishing', {
+      const response = await fetch('http://localhost:8000/api/check-phishing', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
       });
-      const data = await response.json();
+      const data: PhishingResponse = await response.json();
       setResult(data);
     } catch (error) {
       console.error('Error:', error);
@@ -57,7 +56,6 @@ export default function Home() {
           <form onSubmit={checkUrl} className="space-y-4">
             <div className="flex gap-2">
               <Input
-                type="url"
                 placeholder="Enter URL to check..."
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
@@ -65,14 +63,7 @@ export default function Home() {
                 required
               />
               <Button type="submit" disabled={loading}>
-                {loading ? (
-                  'Checking...'
-                ) : (
-                  <>
-                    <Shield className="mr-2 h-4 w-4" />
-                    Check URL
-                  </>
-                )}
+                {loading ? 'Checking...' : 'Check URL'}
               </Button>
             </div>
 
@@ -80,18 +71,18 @@ export default function Home() {
               <div className="space-y-4">
                 <div
                   className={`p-4 rounded-lg flex items-center gap-3 ${
-                    result.isPhishing
+                    result.prediction === 'bad'
                       ? 'bg-destructive/10 text-destructive'
                       : 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
                   }`}
                 >
-                  {result.isPhishing ? (
+                  {result.prediction === 'bad' ? (
                     <ShieldAlert className="h-5 w-5" />
                   ) : (
                     <Shield className="h-5 w-5" />
                   )}
                   <span className="font-medium">
-                    {result.isPhishing
+                    {result.prediction === 'bad'
                       ? 'Warning: Potential phishing URL detected!'
                       : 'Safe: This URL appears to be legitimate.'}
                   </span>
@@ -99,29 +90,21 @@ export default function Home() {
 
                 <Collapsible open={isOpen} onOpenChange={setIsOpen}>
                   <CollapsibleTrigger asChild>
-                    <Button
-                      variant="outline"
-                      className="w-full flex justify-between"
-                    >
+                    <Button variant="outline" className="w-full flex justify-between">
                       <span>URL Analysis Features</span>
-                      {isOpen ? (
-                        <ChevronUp className="h-4 w-4" />
-                      ) : (
-                        <ChevronDown className="h-4 w-4" />
-                      )}
+                      {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                     </Button>
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-4">
                     <div className="space-y-2">
-                      {Object.entries(result.features).map(([key, value]) => (
-                        <div
-                          key={key}
-                          className="flex justify-between py-2 px-4 odd:bg-muted/50 rounded"
-                        >
-                          <span className="font-medium">{key}</span>
-                          <span className="text-muted-foreground">{value}</span>
-                        </div>
-                      ))}
+                      {Object.entries(result)
+                        .filter(([key]) => key !== 'prediction') // Exclude "prediction" field
+                        .map(([key, value]) => (
+                          <div key={key} className="flex justify-between py-2 px-4 odd:bg-muted/50 rounded">
+                            <span className="font-medium">{key}</span>
+                            <span className="text-muted-foreground">{value}</span>
+                          </div>
+                        ))}
                     </div>
                   </CollapsibleContent>
                 </Collapsible>
@@ -132,8 +115,7 @@ export default function Home() {
 
         <div className="text-center text-sm text-muted-foreground">
           <p>
-            Protect yourself from phishing attacks by verifying suspicious URLs
-            before clicking.
+            Protect yourself from phishing attacks by verifying suspicious URLs before clicking.
           </p>
         </div>
       </div>

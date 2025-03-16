@@ -12,17 +12,11 @@ import socket
 from bs4 import BeautifulSoup
 import whois
 import dns.resolver
-from urllib.parse import urlparse
 import re
-from urllib.parse import urlparse
-import requests
 import socket
 from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
-
-import re
-import requests
-import socket
+from tensorflow.keras.models import load_model
 from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
 
@@ -171,10 +165,41 @@ async def check_phishing(request: URLRequest):
         connection_errors_ratio_ = connection_errors_ratio(url)
         mx_servers_count_ = mx_servers_count(url)
 
+        input_features = [
+            full_url_length_, hostname_length_, ip_address_in_url_, dot_count_, hyphen_count_, underscore_count_,
+            slash_count_, question_mark_count_, equal_count_, at_count_, exclamation_count_, space_count_,
+            tilde_count_, comma_count_, plus_count_, asterisk_count_, hashtag_count_, dollar_count_, percent_count_,
+            vertical_bar_count_, colon_count_, semicolon_count_, www_occurrence_, com_occurrence_, http_occurrence_,
+            double_slash_occurrence_, https_token_, digit_ratio_full_url_, digit_ratio_hostname_, punycode_usage_,
+            port_number_presence_, tld_in_path_, tld_in_subdomain_, abnormal_subdomains_, number_of_subdomains_,
+            prefix_suffix_hyphen_, random_domain_indicator_, url_shortening_service_, path_extension_check_,
+            redirection_count_, external_redirection_count_, word_count_url_, word_count_hostname_, word_count_path_,
+            char_repeat_url_, shortest_word_url_, longest_word_url_, longest_word_path_, average_word_length_url_,
+            average_word_length_path_, phish_hints_, brand_in_domain_, brand_in_subdomain_, brand_in_path_,
+            suspicious_tld_, statistical_report_, number_of_hyperlinks_, null_hyperlinks_ratio_, external_css_files_count_,
+            internal_redirection_ratio_, external_redirection_ratio_, internal_errors_ratio_, external_errors_ratio_,
+            login_forms_presence_, external_favicon_, internal_hyperlink_ratio_, external_hyperlink_ratio_,
+            internal_media_ratio_, external_media_ratio_, sfh_form_action_, invisible_iframe_, pop_up_windows_,
+            unsafe_anchors_, right_click_blocking_, empty_title_, domain_in_copyright_, whois_registration_,
+            domain_registration_length_, domain_age_, directory_length_, file_name_length_, tld_length_, email_in_url_,
+            domain_in_ip_format_, server_or_client_in_domain_, asn_, domain_activation_time_, domain_expiration_time_,
+            number_of_resolved_ips_, ttl_hostname_, tls_ssl_certificate_, tld_present_in_parameters_, media_links_ratio_,
+            connection_errors_ratio_, mx_servers_count_
+        ]
 
-
-
-        prediction = loaded_model.predict([url])[0]  # Get prediction
+        encoder_model = load_model("model/encoder_model.h5")
+        input_features = np.array(input_features).reshape(1, -1)
+        if input_features.shape[1] < 97:
+            dummy_fill = np.zeros((1, 97 - input_features.shape[1]))
+            input_features = np.hstack((input_features, dummy_fill))
+        elif input_features.shape[1] > 97:
+            input_features = input_features[:, :97]
+        encoded_features = encoder_model.predict(input_features)
+        model_filename = f'model/svm_model_rbf.pkl'
+        with open(model_filename, 'rb') as file:
+            loaded_modle = pickle.load(file)
+        encoded_features=url
+        prediction = loaded_model.predict([encoded_features])[0]  # Get prediction
         print(prediction)
         return {
             "prediction": prediction,
@@ -277,48 +302,6 @@ async def check_phishing(request: URLRequest):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
-
-
-
-
-def infer_from_features(input_features, kernel='rbf'):
-    # Ensure input_features is a numpy array and reshape to (1, n_features)
-    input_features = np.array(input_features).reshape(1, -1)
-    from tensorflow.keras.models import load_model
-
-    # Load the encoder model
-    encoder_model = load_model("encoder_model.h5")
-
-    # If the input_features length is less than the required dimension, fill with dummy (zero) values.
-    if input_features.shape[1] < 97:
-        dummy_fill = np.zeros((1, 97 - input_features.shape[1]))
-        input_features = np.hstack((input_features, dummy_fill))
-    elif input_features.shape[1] > 97:
-        input_features = input_features[:, :97]
-    
-    # Reduce the features to 15 dimensions using the encoder
-    encoded_features = encoder_model.predict(input_features)
-    
-    # Load the pickled SVM model for the specified kernel
-    model_filename = f'svm_model_{kernel}.pkl'
-    with open(model_filename, 'rb') as file:
-        svm_model_loaded = pickle.load(file)
-    
-    # Predict using the loaded model
-    prediction = svm_model_loaded.predict(encoded_features)
-    return prediction
-
-
-
-
-
-
-
-
-
-
 
 
 

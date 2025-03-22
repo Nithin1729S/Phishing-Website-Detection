@@ -1,16 +1,22 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { Building2, FileDown, Link, Shield, Upload } from 'lucide-react';
+import { useState } from "react";
+import Image from "next/image";
+import { Building2, FileDown, Link, Shield, Upload } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
 export default function Home() {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [result, setResult] = useState<null | {
     prediction: boolean;
     features: Record<string, any>;
@@ -24,13 +30,13 @@ export default function Home() {
       setResult({
         prediction: Math.random() > 0.5,
         features: {
-          'Domain Age': '2 years',
-          'SSL Certificate': 'Valid',
-          'IP Location': 'United States',
-          'Domain Registration': 'Verified',
-          'Suspicious TLD': 'No',
-          'URL Length': '32 characters',
-        }
+          "Domain Age": "2 years",
+          "SSL Certificate": "Valid",
+          "IP Location": "United States",
+          "Domain Registration": "Verified",
+          "Suspicious TLD": "No",
+          "URL Length": "32 characters",
+        },
       });
       setIsLoading(false);
     }, 1500);
@@ -38,12 +44,12 @@ export default function Home() {
 
   const handleBulkAnalysis = async (file: File) => {
     // TODO: Implement bulk analysis
-    console.log('Processing file:', file.name);
+    console.log("Processing file:", file.name);
   };
 
   const downloadReport = () => {
     // TODO: Implement PDF generation and download
-    console.log('Downloading report...');
+    console.log("Downloading report...");
   };
 
   return (
@@ -51,13 +57,13 @@ export default function Home() {
       {/* Header */}
       <header className="border-b bg-white dark:bg-gray-950 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center">
-        <Image
-          src="/nitk.png"
-          alt="NITK Logo"
-          width={40}
-          height={40}
-          className="h-10 w-10 mr-4"
-        />
+          <Image
+            src="/nitk.png"
+            alt="NITK Logo"
+            width={40}
+            height={40}
+            className="h-10 w-10 mr-4"
+          />
           <div>
             <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">
               National Institute of Technology Karnataka, Surathkal
@@ -73,9 +79,12 @@ export default function Home() {
       <main className="container mx-auto px-4 py-8">
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>Phishing Website Detection System [ IT352 Course Project ]</CardTitle>
+            <CardTitle>
+              Phishing Website Detection System [ IT352 Course Project ]
+            </CardTitle>
             <CardDescription>
-              Analyze URLs to detect potential phishing websites using advanced machine learning algorithms
+              Analyze URLs to detect potential phishing websites using advanced
+              machine learning algorithms
             </CardDescription>
           </CardHeader>
         </Card>
@@ -91,7 +100,8 @@ export default function Home() {
               <CardHeader>
                 <CardTitle>Analyze Single URL</CardTitle>
                 <CardDescription>
-                  Enter a URL to analyze its potential for being a phishing website
+                  Enter a URL to analyze its potential for being a phishing
+                  website
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -115,20 +125,29 @@ export default function Home() {
 
                 {result && (
                   <div className="mt-6 space-y-4">
-                    <div className={`p-4 rounded-lg ${
-                      result.prediction
-                        ? 'bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400'
-                        : 'bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400'
-                    }`}>
+                    <div
+                      className={`p-4 rounded-lg ${
+                        result.prediction
+                          ? "bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400"
+                          : "bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                      }`}
+                    >
                       <h3 className="font-semibold">
-                        {result.prediction ? 'Potential Phishing Website Detected!' : 'Website Appears Safe'}
+                        {result.prediction
+                          ? "Potential Phishing Website Detected!"
+                          : "Website Appears Safe"}
                       </h3>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       {Object.entries(result.features).map(([key, value]) => (
-                        <div key={key} className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
-                          <div className="text-sm text-gray-500 dark:text-gray-400">{key}</div>
+                        <div
+                          key={key}
+                          className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
+                        >
+                          <div className="text-sm text-gray-500 dark:text-gray-400">
+                            {key}
+                          </div>
                           <div className="font-medium">{value}</div>
                         </div>
                       ))}
@@ -153,7 +172,9 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Label htmlFor="file" className="block mb-2">Upload File</Label>
+                <Label htmlFor="file" className="block mb-2">
+                  Upload File
+                </Label>
                 <Input
                   id="file"
                   type="file"
@@ -172,9 +193,25 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t bg-white dark:bg-gray-950 mt-8">
         <div className="container mx-auto px-4 py-6">
-          <p className="text-center text-gray-600 dark:text-gray-400">
-            Developed by Nithin S [ 221IT085 ] | © {new Date().getFullYear()}
-          </p>
+          <div className="container mx-auto text-center text-gray-700 dark:text-gray-300 text-sm">
+            <p className="font-medium">
+              Developed by
+              <span className="font-semibold text-gray-900 dark:text-gray-100">
+                {" "}
+                Nithin S{" "}
+              </span>{" "}
+              [221IT085] &
+              <span className="font-semibold text-gray-900 dark:text-gray-100">
+                {" "}
+                Jay Chavan{" "}
+              </span>{" "}
+              [221IT020]
+            </p>
+            <p className="mt-1">
+              © {new Date().getFullYear()} National Institute of Technology
+              Karnataka, Surathkal
+            </p>
+          </div>
         </div>
       </footer>
     </div>

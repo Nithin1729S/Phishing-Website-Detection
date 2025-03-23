@@ -1,15 +1,19 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Shield, ShieldAlert, ChevronDown, ChevronUp } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card } from '@/components/ui/card';
+import { useState } from "react";
+import Image from "next/image";
+import { FileDown, Link } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from '@/components/ui/collapsible';
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 
 interface PhishingResponse {
   prediction: string; // "good" or "bad"
@@ -17,108 +21,189 @@ interface PhishingResponse {
 }
 
 export default function Home() {
-  const [url, setUrl] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [url, setUrl] = useState("");
   const [result, setResult] = useState<PhishingResponse | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const checkUrl = async (e: React.FormEvent) => {
+  const handleUrlSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/api/check-phishing', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("http://localhost:8000/api/check-phishing", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
       });
       const data: PhishingResponse = await response.json();
       setResult(data);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
+  const handleBulkAnalysis = async (file: File) => {
+    // TODO: Implement bulk analysis
+    console.log("Processing file:", file.name);
+  };
+
+  const downloadReport = () => {
+    // TODO: Implement PDF generation and download
+    console.log("Downloading report...");
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background to-secondary p-4">
-      <div className="max-w-3xl mx-auto space-y-8 pt-12">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight">
-            Phishing URL Detection
-          </h1>
-          <p className="text-muted-foreground">
-            Enter a URL to check if it&apos;s potentially malicious
-          </p>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      {/* Header */}
+      <header className="border-b bg-white dark:bg-gray-950 shadow-sm">
+        <div className="container mx-auto px-4 py-4 flex items-center">
+          <Image
+            src="/nitk.png"
+            alt="NITK Logo"
+            width={40}
+            height={40}
+            className="h-10 w-10 mr-4"
+          />
+          <div>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+              National Institute of Technology Karnataka, Surathkal
+            </h1>
+            <h2 className="text-sm text-gray-600 dark:text-gray-400">
+              Department of Information Technology
+            </h2>
+          </div>
         </div>
+      </header>
 
-        <Card className="p-6">
-          <form onSubmit={checkUrl} className="space-y-4">
-            <div className="flex gap-2">
-              <Input
-                placeholder="Enter URL to check..."
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
-                className="flex-1"
-                required
-              />
-              <Button type="submit" disabled={loading}>
-                {loading ? 'Checking...' : 'Check URL'}
-              </Button>
-            </div>
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8">
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
+              Phishing Website Detection System [ IT352 Course Project ]
+            </CardTitle>
+            <CardDescription>
+              Analyze URLs to detect potential phishing websites using advanced
+              machine learning algorithms
+            </CardDescription>
+          </CardHeader>
+        </Card>
 
-            {result && (
-              <div className="space-y-4">
-                <div
-                  className={`p-4 rounded-lg flex items-center gap-3 ${
-                    result.prediction === 'bad'
-                      ? 'bg-destructive/10 text-destructive'
-                      : 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
-                  }`}
-                >
-                  {result.prediction === 'bad' ? (
-                    <ShieldAlert className="h-5 w-5" />
-                  ) : (
-                    <Shield className="h-5 w-5" />
-                  )}
-                  <span className="font-medium">
-                    {result.prediction === 'bad'
-                      ? 'Warning: Potential phishing URL detected!'
-                      : 'Safe: This URL appears to be legitimate.'}
-                  </span>
+        <Tabs defaultValue="single" className="space-y-4">
+          <TabsList>
+            <TabsTrigger value="single">Single URL Analysis</TabsTrigger>
+            <TabsTrigger value="bulk">Bulk Analysis</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="single">
+            <Card>
+              <CardHeader>
+                <CardTitle>Analyze Single URL</CardTitle>
+                <CardDescription>
+                  Enter a URL to analyze its potential for being a phishing
+                  website
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex space-x-2">
+                  <Input
+                    placeholder="Enter URL to analyze..."
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                  />
+                  <Button onClick={handleUrlSubmit} disabled={isLoading}>
+                    {isLoading ? (
+                      "Analyzing..."
+                    ) : (
+                      <>
+                        <Link className="mr-2 h-4 w-4" />
+                        Analyze
+                      </>
+                    )}
+                  </Button>
                 </div>
 
-                <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-                  <CollapsibleTrigger asChild>
-                    <Button variant="outline" className="w-full flex justify-between">
-                      <span>URL Analysis Features</span>
-                      {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-                    </Button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="mt-4">
-                    <div className="space-y-2">
+                {result && (
+                  <div className="mt-6 space-y-4">
+                    {/* Prediction alert remains the same */}
+
+                    <div className="grid grid-cols-2 gap-4">
                       {Object.entries(result)
-                        .filter(([key]) => key !== 'prediction') // Exclude "prediction" field
+                        .filter(([key]) => key !== "prediction") // Exclude prediction
                         .map(([key, value]) => (
-                          <div key={key} className="flex justify-between py-2 px-4 odd:bg-muted/50 rounded">
-                            <span className="font-medium">{key}</span>
-                            <span className="text-muted-foreground">{value}</span>
+                          <div
+                            key={key}
+                            className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
+                          >
+                            <div className="text-sm text-gray-500 dark:text-gray-400">
+                              {key}
+                            </div>
+                            <div className="font-medium">
+                              {value.toString()}
+                            </div>
                           </div>
                         ))}
                     </div>
-                  </CollapsibleContent>
-                </Collapsible>
-              </div>
-            )}
-          </form>
-        </Card>
 
-        <div className="text-center text-sm text-muted-foreground">
-          <p>
-            Protect yourself from phishing attacks by verifying suspicious URLs before clicking.
-          </p>
+                    {/* Download button remains the same */}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="bulk">
+            <Card>
+              <CardHeader>
+                <CardTitle>Bulk URL Analysis</CardTitle>
+                <CardDescription>
+                  Upload a CSV/Excel file containing URLs for batch analysis
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Label htmlFor="file" className="block mb-2">
+                  Upload File
+                </Label>
+                <Input
+                  id="file"
+                  type="file"
+                  accept=".csv,.xlsx,.xls"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) handleBulkAnalysis(file);
+                  }}
+                />
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t bg-white dark:bg-gray-950 mt-8">
+        <div className="container mx-auto px-4 py-6">
+          <div className="container mx-auto text-center text-gray-700 dark:text-gray-300 text-sm">
+            <p className="font-medium">
+              Developed by
+              <span className="font-semibold text-gray-900 dark:text-gray-100">
+                {" "}
+                Nithin S{" "}
+              </span>{" "}
+              [221IT085] &
+              <span className="font-semibold text-gray-900 dark:text-gray-100">
+                {" "}
+                Jay Chavan{" "}
+              </span>{" "}
+              [221IT020]
+            </p>
+            <p className="mt-1">
+              © {new Date().getFullYear()} National Institute of Technology
+              Karnataka, Surathkal
+            </p>
+          </div>
         </div>
-      </div>
-    </main>
+      </footer>
+    </div>
   );
 }

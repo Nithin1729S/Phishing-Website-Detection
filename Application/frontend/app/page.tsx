@@ -37,100 +37,128 @@ export default function Home() {
   const [bulkProgress, setBulkProgress] = useState(0);
   const [isBulkAnalyzing, setIsBulkAnalyzing] = useState(false);
 
-  const generatePDF = (data: PhishingResponse | BulkAnalysisResult, urlToAnalyze: string) => {
-    const pdf = new jsPDF();
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
+  // Helper function to convert an image URL to a Base64 string
+const loadImageAsBase64 = async (url: string): Promise<string> => {
+  const response = await fetch(url);
+  const blob = await response.blob();
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+};
+
+const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAnalyze: string) => {
+  const pdf = new jsPDF();
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const pageHeight = pdf.internal.pageSize.getHeight();
+
+  // Add a colored header background
+  pdf.setFillColor(240, 240, 240);
+  pdf.rect(0, 0, pageWidth, 50, 'F');
+
+  // Load the NITK logo from the public folder (make sure nitk.png is in the public folder)
+  const logoUrl = '/nitk.png';
+  const logoBase64 = await loadImageAsBase64(logoUrl);
+  pdf.addImage(logoBase64, 'PNG', 15, 10, 30, 30);
+
+  // Add title lines
+  pdf.setFontSize(16);
+  pdf.setTextColor(44, 62, 80);
+  pdf.text("National Institute of Technology Karnataka, Surathkal", pageWidth / 2 + 10, 20, { align: "center" });
+  
+  pdf.setFontSize(14);
+  pdf.setTextColor(100, 100, 100);
+  pdf.text("Department of Information Technology", pageWidth / 2 + 10, 35, { align: "center" });
+  
+  // Phishing Detection Report title
+  pdf.setFontSize(24);
+  pdf.setTextColor(44, 62, 80);
+  pdf.text("Phishing Detection Report", pageWidth / 2, 60, { align: "center" });
+  
+  // Divider line
+  pdf.setDrawColor(52, 152, 219);
+  pdf.setLineWidth(0.5);
+  pdf.line(20, 70, pageWidth - 20, 70);
+  
+  // URL section with box
+  pdf.setFillColor(249, 249, 249);
+  pdf.rect(20, 80, pageWidth - 40, 20, 'F');
+  pdf.setFontSize(12);
+  pdf.setTextColor(44, 62, 80);
+  pdf.text("URL:", 25, 90);
+  pdf.setTextColor(52, 152, 219);
+  pdf.text(urlToAnalyze, 45, 90);
+  
+  // Prediction Result with colored box
+  const isPotentialPhishing = data.prediction === "bad";
+  if (isPotentialPhishing) {
+    pdf.setFillColor(255, 240, 240);
+  } else {
+    pdf.setFillColor(240, 255, 240);
+  }
+  pdf.rect(20, 110, pageWidth - 40, 25, 'F');
+  pdf.setFontSize(16);
+  const textColor = isPotentialPhishing ? [192, 57, 43] : [39, 174, 96];
+  pdf.setTextColor(textColor[0], textColor[1], textColor[2]);
+  pdf.text(
+    `Prediction: ${isPotentialPhishing ? "Potential Phishing Website" : "Safe Website"}`,
+    pageWidth / 2,
+    125,
+    { align: "center" }
+  );
+  
+  // Features section
+  pdf.setFontSize(18);
+  pdf.setTextColor(44, 62, 80);
+  pdf.text("Feature Analysis", pageWidth / 2, 150, { align: "center" });
+  
+  // Feature grid
+  let yPos = 165;
+  let xPos = 20;
+  const features = Object.entries(data).filter(([key]) => key !== "prediction");
+  
+  features.forEach(([key, value], index) => {
+    if (yPos > pageHeight - 20) {
+      pdf.addPage();
+      yPos = 20;
+    }
     
-    // Add a colored header background
-    pdf.setFillColor(240, 240, 240);
-    pdf.rect(0, 0, pageWidth, 40, 'F');
-    
-    // Title with styling
-    pdf.setFontSize(24);
-    pdf.setTextColor(44, 62, 80);
-    pdf.text("Phishing Detection Report", pageWidth / 2, 25, { align: "center" });
-    
-    // Divider line
-    pdf.setDrawColor(52, 152, 219);
-    pdf.setLineWidth(0.5);
-    pdf.line(20, 45, pageWidth - 20, 45);
-    
-    // URL section with box
+    // Feature box
     pdf.setFillColor(249, 249, 249);
-    pdf.rect(20, 55, pageWidth - 40, 20, 'F');
+    pdf.rect(xPos, yPos, (pageWidth - 50) / 2, 25, 'F');
+    
+    // Feature name
+    pdf.setFontSize(11);
+    pdf.setTextColor(52, 73, 94);
+    pdf.text(key, xPos + 5, yPos + 10);
+    
+    // Feature value
     pdf.setFontSize(12);
     pdf.setTextColor(44, 62, 80);
-    pdf.text("URL:", 25, 65);
-    pdf.setTextColor(52, 152, 219);
-    pdf.text(urlToAnalyze, 45, 65);
+    pdf.text(value.toString(), xPos + 5, yPos + 20);
     
-    // Prediction Result with colored box
-    const isPotentialPhishing = data.prediction === "bad";
-    if (isPotentialPhishing) {
-      pdf.setFillColor(255, 240, 240);
+    // Adjust position for next feature
+    if (index % 2 === 0) {
+      xPos = pageWidth / 2 + 10;
     } else {
-      pdf.setFillColor(240, 255, 240);
+      xPos = 20;
+      yPos += 35;
     }
-    pdf.rect(20, 85, pageWidth - 40, 25, 'F');
-    pdf.setFontSize(16);
-    const textColor = isPotentialPhishing ? [192, 57, 43] : [39, 174, 96];
-    pdf.setTextColor(textColor[0], textColor[1], textColor[2]);
-    pdf.text(
-      `Prediction: ${isPotentialPhishing ? "Potential Phishing Website" : "Safe Website"}`,
-      pageWidth / 2,
-      100,
-      { align: "center" }
-    );
-    
-    // Features section
-    pdf.setFontSize(18);
-    pdf.setTextColor(44, 62, 80);
-    pdf.text("Feature Analysis", pageWidth / 2, 125, { align: "center" });
-    
-    // Feature grid
-    let yPos = 140;
-    let xPos = 20;
-    const features = Object.entries(data).filter(([key]) => key !== "prediction");
-    
-    features.forEach(([key, value], index) => {
-      if (yPos > pageHeight - 20) {
-        pdf.addPage();
-        yPos = 20;
-      }
-      
-      // Feature box
-      pdf.setFillColor(249, 249, 249);
-      pdf.rect(xPos, yPos, (pageWidth - 50) / 2, 25, 'F');
-      
-      // Feature name
-      pdf.setFontSize(11);
-      pdf.setTextColor(52, 73, 94);
-      pdf.text(key, xPos + 5, yPos + 10);
-      
-      // Feature value
-      pdf.setFontSize(12);
-      pdf.setTextColor(44, 62, 80);
-      pdf.text(value.toString(), xPos + 5, yPos + 20);
-      
-      // Adjust position for next feature
-      if (index % 2 === 0) {
-        xPos = pageWidth / 2 + 10;
-      } else {
-        xPos = 20;
-        yPos += 35;
-      }
-    });
-    
-    // Footer
-    const timestamp = new Date().toLocaleString();
-    pdf.setFontSize(10);
-    pdf.setTextColor(128, 128, 128);
-    pdf.text(`Generated on: ${timestamp}`, 20, pageHeight - 10);
-    
-    // Save the PDF
-    pdf.save(`phishing-report-${new Date().getTime()}.pdf`);
-  };
+  });
+  
+  // Footer
+  const timestamp = new Date().toLocaleString();
+  pdf.setFontSize(10);
+  pdf.setTextColor(128, 128, 128);
+  pdf.text(`Generated on: ${timestamp}`, 20, pageHeight - 10);
+  
+  // Save the PDF
+  pdf.save(`phishing-report-${new Date().getTime()}.pdf`);
+};
+
+  
 
   const handleUrlSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

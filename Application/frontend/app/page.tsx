@@ -37,39 +37,96 @@ export default function Home() {
   const [bulkProgress, setBulkProgress] = useState(0);
   const [isBulkAnalyzing, setIsBulkAnalyzing] = useState(false);
 
-  const generatePDF = (data: PhishingResponse | BulkAnalysisResult) => {
+  const generatePDF = (data: PhishingResponse | BulkAnalysisResult, urlToAnalyze: string) => {
     const pdf = new jsPDF();
     const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
     
-    // Header
-    pdf.setFontSize(20);
-    pdf.text("Phishing Detection Report", pageWidth / 2, 20, { align: "center" });
+    // Add a colored header background
+    pdf.setFillColor(240, 240, 240);
+    pdf.rect(0, 0, pageWidth, 40, 'F');
     
-    // URL
+    // Title with styling
+    pdf.setFontSize(24);
+    pdf.setTextColor(44, 62, 80);
+    pdf.text("Phishing Detection Report", pageWidth / 2, 25, { align: "center" });
+    
+    // Divider line
+    pdf.setDrawColor(52, 152, 219);
+    pdf.setLineWidth(0.5);
+    pdf.line(20, 45, pageWidth - 20, 45);
+    
+    // URL section with box
+    pdf.setFillColor(249, 249, 249);
+    pdf.rect(20, 55, pageWidth - 40, 20, 'F');
     pdf.setFontSize(12);
-    pdf.text(`URL: ${url}`, 20, 40);
+    pdf.setTextColor(44, 62, 80);
+    pdf.text("URL:", 25, 65);
+    pdf.setTextColor(52, 152, 219);
+    pdf.text(urlToAnalyze, 45, 65);
     
-    // Prediction Result
+    // Prediction Result with colored box
+    const isPotentialPhishing = data.prediction === "bad";
+    if (isPotentialPhishing) {
+      pdf.setFillColor(255, 240, 240);
+    } else {
+      pdf.setFillColor(240, 255, 240);
+    }
+    pdf.rect(20, 85, pageWidth - 40, 25, 'F');
     pdf.setFontSize(16);
-    const predictionText = `Prediction: ${data.prediction === "bad" ? "Potential Phishing Website" : "Safe Website"}`;
-    pdf.text(predictionText, 20, 60);
+    const textColor = isPotentialPhishing ? [192, 57, 43] : [39, 174, 96];
+    pdf.setTextColor(textColor[0], textColor[1], textColor[2]);
+    pdf.text(
+      `Prediction: ${isPotentialPhishing ? "Potential Phishing Website" : "Safe Website"}`,
+      pageWidth / 2,
+      100,
+      { align: "center" }
+    );
     
-    // Features
-    pdf.setFontSize(14);
-    pdf.text("Feature Analysis:", 20, 80);
+    // Features section
+    pdf.setFontSize(18);
+    pdf.setTextColor(44, 62, 80);
+    pdf.text("Feature Analysis", pageWidth / 2, 125, { align: "center" });
     
-    let yPos = 90;
-    Object.entries(data)
-      .filter(([key]) => key !== "prediction")
-      .forEach(([key, value]) => {
-        if (yPos > 250) {
-          pdf.addPage();
-          yPos = 20;
-        }
-        pdf.setFontSize(12);
-        pdf.text(`${key}: ${value}`, 20, yPos);
-        yPos += 10;
-      });
+    // Feature grid
+    let yPos = 140;
+    let xPos = 20;
+    const features = Object.entries(data).filter(([key]) => key !== "prediction");
+    
+    features.forEach(([key, value], index) => {
+      if (yPos > pageHeight - 20) {
+        pdf.addPage();
+        yPos = 20;
+      }
+      
+      // Feature box
+      pdf.setFillColor(249, 249, 249);
+      pdf.rect(xPos, yPos, (pageWidth - 50) / 2, 25, 'F');
+      
+      // Feature name
+      pdf.setFontSize(11);
+      pdf.setTextColor(52, 73, 94);
+      pdf.text(key, xPos + 5, yPos + 10);
+      
+      // Feature value
+      pdf.setFontSize(12);
+      pdf.setTextColor(44, 62, 80);
+      pdf.text(value.toString(), xPos + 5, yPos + 20);
+      
+      // Adjust position for next feature
+      if (index % 2 === 0) {
+        xPos = pageWidth / 2 + 10;
+      } else {
+        xPos = 20;
+        yPos += 35;
+      }
+    });
+    
+    // Footer
+    const timestamp = new Date().toLocaleString();
+    pdf.setFontSize(10);
+    pdf.setTextColor(128, 128, 128);
+    pdf.text(`Generated on: ${timestamp}`, 20, pageHeight - 10);
     
     // Save the PDF
     pdf.save(`phishing-report-${new Date().getTime()}.pdf`);
@@ -131,32 +188,6 @@ export default function Home() {
         setIsBulkAnalyzing(false);
       },
     });
-  };
-
-  const downloadBulkReport = () => {
-    const pdf = new jsPDF();
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    
-    pdf.setFontSize(20);
-    pdf.text("Bulk Analysis Report", pageWidth / 2, 20, { align: "center" });
-    
-    let yPos = 40;
-    bulkResults.forEach((result, index) => {
-      if (yPos > 250) {
-        pdf.addPage();
-        yPos = 20;
-      }
-      
-      pdf.setFontSize(14);
-      pdf.text(`URL ${index + 1}: ${result.url}`, 20, yPos);
-      yPos += 10;
-      
-      pdf.setFontSize(12);
-      pdf.text(`Prediction: ${result.prediction === "bad" ? "Potential Phishing" : "Safe"}`, 30, yPos);
-      yPos += 20;
-    });
-    
-    pdf.save(`bulk-analysis-report-${new Date().getTime()}.pdf`);
   };
 
   return (
@@ -248,7 +279,10 @@ export default function Home() {
                           : "Website Appears Safe"}
                       </h3>
                     </div>
-
+                    <Button onClick={() => generatePDF(result, url)}>
+                      <FileDown className="mr-2 h-4 w-4" />
+                      Download Report
+                    </Button>
                     <div className="grid grid-cols-2 gap-4">
                       {Object.entries(result)
                         .filter(([key]) => key !== "prediction")
@@ -265,10 +299,7 @@ export default function Home() {
                         ))}
                     </div>
 
-                    <Button onClick={() => generatePDF(result)}>
-                      <FileDown className="mr-2 h-4 w-4" />
-                      Download Report
-                    </Button>
+                    
                   </div>
                 )}
               </CardContent>
@@ -317,35 +348,42 @@ export default function Home() {
                         {bulkResults.map((result, index) => (
                           <div
                             key={index}
-                            className={`p-3 rounded-md ${
+                            className={`p-4 rounded-md ${
                               result.prediction === "bad"
                                 ? "bg-red-50 dark:bg-red-900/10"
                                 : "bg-green-50 dark:bg-green-900/10"
                             }`}
                           >
-                            <p className="text-sm font-medium truncate">
-                              {result.url}
-                            </p>
-                            <p
-                              className={`text-sm ${
-                                result.prediction === "bad"
-                                  ? "text-red-600 dark:text-red-400"
-                                  : "text-green-600 dark:text-green-400"
-                              }`}
-                            >
-                              {result.prediction === "bad"
-                                ? "Potential Phishing"
-                                : "Safe"}
-                            </p>
+                            <div className="flex items-center justify-between">
+                              <div className="space-y-1">
+                                <p className="text-sm font-medium truncate">
+                                  {result.url}
+                                </p>
+                                <p
+                                  className={`text-sm ${
+                                    result.prediction === "bad"
+                                      ? "text-red-600 dark:text-red-400"
+                                      : "text-green-600 dark:text-green-400"
+                                  }`}
+                                >
+                                  {result.prediction === "bad"
+                                    ? "Potential Phishing"
+                                    : "Safe"}
+                                </p>
+                              </div>
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                onClick={() => generatePDF({ ...result.features, url: result.url, prediction: result.prediction }, result.url)}
+                              >
+                                <FileDown className="h-4 w-4 mr-1" />
+                                Report
+                              </Button>
+                            </div>
                           </div>
                         ))}
                       </div>
                     </div>
-
-                    <Button onClick={downloadBulkReport}>
-                      <FileDown className="mr-2 h-4 w-4" />
-                      Download Bulk Report
-                    </Button>
                   </div>
                 )}
               </CardContent>

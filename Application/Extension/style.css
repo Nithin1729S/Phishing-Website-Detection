@@ -1,0 +1,56 @@
+/* Popup Design */
+.popup-container {
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.popup-container h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Warning Page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ff6b6b;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.warning-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.warning-container h1 {
+    color: red;
+    font-size: 24px;
+}
+
+.warning-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #c0392b;
+}

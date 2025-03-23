@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Phishing Checker",
+    "version": "1.0",
+    "permissions": ["tabs", "activeTab", "webRequest", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+    "host_permissions": ["<all_urls>"]
+  }
+  

@@ -195,12 +195,13 @@ async def check_phishing(request: URLRequest):
         elif input_features.shape[1] > 97:
             input_features = input_features[:, :97]
         encoded_features = encoder_model.predict(input_features)
-        print(encoded_features)
+        #print(encoded_features)
         model_filename = f'model/svm_model_rbf.pkl'
         with open(model_filename, 'rb') as file:
             loaded_modle = pickle.load(file)
         encoded_features=url
         prediction = loaded_model.predict([encoded_features])[0]  # Get prediction
+        print(url)
         print(prediction)
         return {
             "prediction": prediction,

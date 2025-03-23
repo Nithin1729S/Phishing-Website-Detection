@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FileDown, Link } from "lucide-react";
+import { FileDown, Link, Loader2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,16 +14,66 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { jsPDF } from "jspdf";
+import Papa from "papaparse";
+import { Progress } from "@/components/ui/progress";
 
 interface PhishingResponse {
-  prediction: string; // "good" or "bad"
-  [key: string]: string | number; // Dynamic key-value pairs for features
+  prediction: string;
+  [key: string]: string | number;
+}
+
+interface BulkAnalysisResult {
+  url: string;
+  prediction: string;
+  features?: Record<string, string | number>;
 }
 
 export default function Home() {
   const [url, setUrl] = useState("");
   const [result, setResult] = useState<PhishingResponse | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [bulkResults, setBulkResults] = useState<BulkAnalysisResult[]>([]);
+  const [bulkProgress, setBulkProgress] = useState(0);
+  const [isBulkAnalyzing, setIsBulkAnalyzing] = useState(false);
+
+  const generatePDF = (data: PhishingResponse | BulkAnalysisResult) => {
+    const pdf = new jsPDF();
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    
+    // Header
+    pdf.setFontSize(20);
+    pdf.text("Phishing Detection Report", pageWidth / 2, 20, { align: "center" });
+    
+    // URL
+    pdf.setFontSize(12);
+    pdf.text(`URL: ${url}`, 20, 40);
+    
+    // Prediction Result
+    pdf.setFontSize(16);
+    const predictionText = `Prediction: ${data.prediction === "bad" ? "Potential Phishing Website" : "Safe Website"}`;
+    pdf.text(predictionText, 20, 60);
+    
+    // Features
+    pdf.setFontSize(14);
+    pdf.text("Feature Analysis:", 20, 80);
+    
+    let yPos = 90;
+    Object.entries(data)
+      .filter(([key]) => key !== "prediction")
+      .forEach(([key, value]) => {
+        if (yPos > 250) {
+          pdf.addPage();
+          yPos = 20;
+        }
+        pdf.setFontSize(12);
+        pdf.text(`${key}: ${value}`, 20, yPos);
+        yPos += 10;
+      });
+    
+    // Save the PDF
+    pdf.save(`phishing-report-${new Date().getTime()}.pdf`);
+  };
 
   const handleUrlSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,13 +94,69 @@ export default function Home() {
   };
 
   const handleBulkAnalysis = async (file: File) => {
-    // TODO: Implement bulk analysis
-    console.log("Processing file:", file.name);
+    setIsBulkAnalyzing(true);
+    setBulkResults([]);
+    setBulkProgress(0);
+
+    Papa.parse(file, {
+      complete: async (results) => {
+        const urls = results.data.flat().filter(Boolean);
+        const totalUrls = urls.length;
+        const analysisResults: BulkAnalysisResult[] = [];
+
+        for (let i = 0; i < urls.length; i++) {
+          try {
+            const response = await fetch("http://localhost:8000/api/check-phishing", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ url: urls[i] }),
+            });
+            const data = await response.json();
+            analysisResults.push({
+              url: urls[i] as string,
+              prediction: data.prediction,
+              features: data,
+            });
+          } catch (error) {
+            console.error(`Error analyzing ${urls[i]}:`, error);
+          }
+          setBulkProgress(((i + 1) / totalUrls) * 100);
+        }
+
+        setBulkResults(analysisResults);
+        setIsBulkAnalyzing(false);
+      },
+      error: (error) => {
+        console.error("Error parsing CSV:", error);
+        setIsBulkAnalyzing(false);
+      },
+    });
   };
 
-  const downloadReport = () => {
-    // TODO: Implement PDF generation and download
-    console.log("Downloading report...");
+  const downloadBulkReport = () => {
+    const pdf = new jsPDF();
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    
+    pdf.setFontSize(20);
+    pdf.text("Bulk Analysis Report", pageWidth / 2, 20, { align: "center" });
+    
+    let yPos = 40;
+    bulkResults.forEach((result, index) => {
+      if (yPos > 250) {
+        pdf.addPage();
+        yPos = 20;
+      }
+      
+      pdf.setFontSize(14);
+      pdf.text(`URL ${index + 1}: ${result.url}`, 20, yPos);
+      yPos += 10;
+      
+      pdf.setFontSize(12);
+      pdf.text(`Prediction: ${result.prediction === "bad" ? "Potential Phishing" : "Safe"}`, 30, yPos);
+      yPos += 20;
+    });
+    
+    pdf.save(`bulk-analysis-report-${new Date().getTime()}.pdf`);
   };
 
   return (
@@ -106,15 +212,18 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex space-x-2">
+                <form onSubmit={handleUrlSubmit} className="flex space-x-2">
                   <Input
                     placeholder="Enter URL to analyze..."
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                   />
-                  <Button onClick={handleUrlSubmit} disabled={isLoading}>
+                  <Button type="submit" disabled={isLoading}>
                     {isLoading ? (
-                      "Analyzing..."
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Analyzing...
+                      </>
                     ) : (
                       <>
                         <Link className="mr-2 h-4 w-4" />
@@ -122,15 +231,27 @@ export default function Home() {
                       </>
                     )}
                   </Button>
-                </div>
+                </form>
 
                 {result && (
                   <div className="mt-6 space-y-4">
-                    {/* Prediction alert remains the same */}
+                    <div
+                      className={`p-4 rounded-lg ${
+                        result.prediction === "bad"
+                          ? "bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400"
+                          : "bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400"
+                      }`}
+                    >
+                      <h3 className="font-semibold">
+                        {result.prediction === "bad"
+                          ? "Potential Phishing Website Detected!"
+                          : "Website Appears Safe"}
+                      </h3>
+                    </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       {Object.entries(result)
-                        .filter(([key]) => key !== "prediction") // Exclude prediction
+                        .filter(([key]) => key !== "prediction")
                         .map(([key, value]) => (
                           <div
                             key={key}
@@ -139,14 +260,15 @@ export default function Home() {
                             <div className="text-sm text-gray-500 dark:text-gray-400">
                               {key}
                             </div>
-                            <div className="font-medium">
-                              {value.toString()}
-                            </div>
+                            <div className="font-medium">{value.toString()}</div>
                           </div>
                         ))}
                     </div>
 
-                    {/* Download button remains the same */}
+                    <Button onClick={() => generatePDF(result)}>
+                      <FileDown className="mr-2 h-4 w-4" />
+                      Download Report
+                    </Button>
                   </div>
                 )}
               </CardContent>
@@ -158,22 +280,74 @@ export default function Home() {
               <CardHeader>
                 <CardTitle>Bulk URL Analysis</CardTitle>
                 <CardDescription>
-                  Upload a CSV/Excel file containing URLs for batch analysis
+                  Upload a CSV file containing URLs for batch analysis
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Label htmlFor="file" className="block mb-2">
-                  Upload File
-                </Label>
-                <Input
-                  id="file"
-                  type="file"
-                  accept=".csv,.xlsx,.xls"
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    if (file) handleBulkAnalysis(file);
-                  }}
-                />
+              <CardContent className="space-y-4">
+                <div>
+                  <Label htmlFor="file" className="block mb-2">
+                    Upload CSV File
+                  </Label>
+                  <Input
+                    id="file"
+                    type="file"
+                    accept=".csv"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) handleBulkAnalysis(file);
+                    }}
+                    disabled={isBulkAnalyzing}
+                  />
+                </div>
+
+                {isBulkAnalyzing && (
+                  <div className="space-y-2">
+                    <Progress value={bulkProgress} />
+                    <p className="text-sm text-gray-500">
+                      Analyzing URLs... {Math.round(bulkProgress)}%
+                    </p>
+                  </div>
+                )}
+
+                {bulkResults.length > 0 && (
+                  <div className="space-y-4">
+                    <div className="rounded-lg border p-4">
+                      <h3 className="font-semibold mb-2">Analysis Results</h3>
+                      <div className="space-y-2">
+                        {bulkResults.map((result, index) => (
+                          <div
+                            key={index}
+                            className={`p-3 rounded-md ${
+                              result.prediction === "bad"
+                                ? "bg-red-50 dark:bg-red-900/10"
+                                : "bg-green-50 dark:bg-green-900/10"
+                            }`}
+                          >
+                            <p className="text-sm font-medium truncate">
+                              {result.url}
+                            </p>
+                            <p
+                              className={`text-sm ${
+                                result.prediction === "bad"
+                                  ? "text-red-600 dark:text-red-400"
+                                  : "text-green-600 dark:text-green-400"
+                              }`}
+                            >
+                              {result.prediction === "bad"
+                                ? "Potential Phishing"
+                                : "Safe"}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <Button onClick={downloadBulkReport}>
+                      <FileDown className="mr-2 h-4 w-4" />
+                      Download Bulk Report
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>

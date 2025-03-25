@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Phishing Checker",
+    "name": "Phishing Detection Extension ( IT352 Course Project )",
     "version": "1.0",
     "permissions": ["tabs", "activeTab", "webRequest", "scripting"],
     "background": {

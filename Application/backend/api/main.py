@@ -54,7 +54,7 @@ try:
         loaded_model = pickle.load(model_file)
 except Exception as e:
     raise RuntimeError(f"Failed to load the model: {e}")
-
+flag=0
 @app.get("/")
 def health_check():
     return {"status": "OK"}
@@ -63,11 +63,13 @@ def health_check():
 async def check_phishing(request: URLRequest):
     try:
         url = request.url
+        flag=0
         # Remove the protocol if present (case-sensitive check)
         if url.startswith("https://"):
             url = url[8:]
         elif url.startswith("http://"):
             url = url[7:]
+            flag=1
         
         full_url_length_ = full_url_length(url)
         hostname_length_ = hostname_length(url)
@@ -203,6 +205,8 @@ async def check_phishing(request: URLRequest):
         prediction = loaded_model.predict([encoded_features])[0]  # Get prediction
         print(url)
         print(prediction)
+        if(flag==1):
+            prediction='bad'
         return {
             "prediction": prediction,
             "full_url_length": full_url_length_,

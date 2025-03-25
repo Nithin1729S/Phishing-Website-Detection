@@ -155,7 +155,7 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
   pdf.text(`Generated on: ${timestamp}`, 20, pageHeight - 10);
   
   // Save the PDF
-  pdf.save(`phishing-report-${new Date().getTime()}.pdf`);
+  pdf.save(`${urlToAnalyze}-phishing-report-${timestamp}.pdf`);
 };
 
   
@@ -246,7 +246,7 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>
-              Phishing Website Detection System [ IT352 Course Project ]
+              Phishing Website Detection System [ IT352 Course Project Jan - May 2025 ]
             </CardTitle>
             <CardDescription>
               Analyze URLs to detect potential phishing websites using advanced
@@ -276,6 +276,7 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
                     placeholder="Enter URL to analyze..."
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
+                    required
                   />
                   <Button type="submit" disabled={isLoading}>
                     {isLoading ? (

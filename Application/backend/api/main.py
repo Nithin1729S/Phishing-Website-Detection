@@ -204,7 +204,10 @@ async def check_phishing(request: URLRequest):
         encoded_features=url
         prediction = loaded_model.predict([encoded_features])[0]  # Get prediction
         print(url)
-        print(prediction)
+        if(prediction == 'good') :
+            print("Safe")
+        else:
+            print("Phishing")
         if(flag==1):
             prediction='bad'
         return {

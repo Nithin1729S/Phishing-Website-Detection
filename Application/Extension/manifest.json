@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Phishing Detection ( IT352 Course Project )",
-    "description": "A browser extension for detecting phishing URLs as part of the IT352 course project. Developed by Nithin S [ 221IT085 ] and Jay Chavan [ 221IT020 ].  © 2025 National Institute of Technology Karnataka, Surathkal.",
+    "description": "A browser extension for detecting phishing URLs as part of the IT352 course project. Developed by Nithin S [ 221IT085 ].  © 2025 National Institute of Technology Karnataka, Surathkal.",
     "icons": {
     "16": "icons/nitk.png",
     "48": "icons/nitk.png",

@@ -1,6 +1,6 @@
 "use client";
+import { useEffect, useState } from "react";
 
-import { useState } from "react";
 import Image from "next/image";
 import { FileDown, Link, Loader2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -217,6 +217,11 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
       },
     });
   };
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+useEffect(() => {
+  setCurrentYear(new Date().getFullYear());
+}, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
@@ -249,8 +254,21 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
               Phishing Website Detection System [ IT352 Course Project Jan - May 2025 ]
             </CardTitle>
             <CardDescription>
-              Analyze URLs to detect potential phishing websites using advanced
-              machine learning algorithms
+            
+              <div className="font-medium">
+               Developed by
+                <span className="font-semibold text-gray-900 dark:text-gray-100">
+                 {" "}
+                 Nithin S{" "}
+                 </span>
+                 [221IT085] and
+                 <span className="font-semibold text-gray-900 dark:text-gray-100">
+                 {" "}
+                 Jay Chavan{" "}
+                 </span>
+                 [221IT020]
+               </div>
+
             </CardDescription>
           </CardHeader>
         </Card>
@@ -363,9 +381,9 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
                 {isBulkAnalyzing && (
                   <div className="space-y-2">
                     <Progress value={bulkProgress} />
-                    <p className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-500">
                       Analyzing URLs... {Math.round(bulkProgress)}%
-                    </p>
+                    </div>
                   </div>
                 )}
 
@@ -385,10 +403,10 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
                           >
                             <div className="flex items-center justify-between">
                               <div className="space-y-1">
-                                <p className="text-sm font-medium truncate">
+                                <div className="text-sm font-medium truncate">
                                   {result.url}
-                                </p>
-                                <p
+                                </div>
+                                <div
                                   className={`text-sm ${
                                     result.prediction === "bad"
                                       ? "text-red-600 dark:text-red-400"
@@ -398,7 +416,7 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
                                   {result.prediction === "bad"
                                     ? "Potential Phishing"
                                     : "Safe"}
-                                </p>
+                                </div>
                               </div>
                               <Button
                                 size="sm"
@@ -425,18 +443,13 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
       <footer className="border-t bg-white dark:bg-gray-950 mt-8">
         <div className="container mx-auto px-4 py-6">
           <div className="container mx-auto text-center text-gray-700 dark:text-gray-300 text-sm">
-            <p className="font-medium">
-              Developed by
-              <span className="font-semibold text-gray-900 dark:text-gray-100">
-                {" "}
-                {/* Nithin S{" "} */}
-              </span>{" "}
-              {/* [221IT085]  */}
-            </p>
-            <p className="mt-1">
-              © {new Date().getFullYear()} National Institute of Technology
-              Karnataka, Surathkal
-            </p>
+            
+          {currentYear && (
+  <div className="mt-1">
+    © {currentYear} National Institute of Technology Karnataka, Surathkal
+  </div>
+)}
+
           </div>
         </div>
       </footer>

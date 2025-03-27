@@ -429,9 +429,9 @@ const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAna
               Developed by
               <span className="font-semibold text-gray-900 dark:text-gray-100">
                 {" "}
-                Nithin S{" "}
+                {/* Nithin S{" "} */}
               </span>{" "}
-              [221IT085] 
+              {/* [221IT085]  */}
             </p>
             <p className="mt-1">
               © {new Date().getFullYear()} National Institute of Technology

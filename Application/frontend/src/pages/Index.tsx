@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { FileDown, Link, Loader2 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -52,21 +51,24 @@ const Index = () => {
     }
   };
 
-  const generatePDF = async (data: PhishingResponse | BulkAnalysisResult, urlToAnalyze: string) => {
+  const generatePDF = async (
+    data: PhishingResponse | BulkAnalysisResult,
+    urlToAnalyze: string
+  ) => {
     const pdf = new jsPDF();
     const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
 
     // Add a colored header background
     pdf.setFillColor(240, 240, 240);
-    pdf.rect(0, 0, pageWidth, 50, 'F');
+    pdf.rect(0, 0, pageWidth, 50, "F");
 
     // Load the NITK logo from the public folder (make sure nitk.png is in the public folder)
     try {
-      const logoUrl = '/nitk.png';
+      const logoUrl = "/nitk.png";
       const logoBase64 = await loadImageAsBase64(logoUrl);
       if (logoBase64) {
-        pdf.addImage(logoBase64, 'PNG', 15, 10, 30, 30);
+        pdf.addImage(logoBase64, "PNG", 15, 10, 30, 30);
       }
     } catch (error) {
       console.error("Error adding logo to PDF:", error);
@@ -75,16 +77,25 @@ const Index = () => {
     // Add title lines
     pdf.setFontSize(16);
     pdf.setTextColor(44, 62, 80);
-    pdf.text("National Institute of Technology Karnataka, Surathkal", pageWidth / 2 + 10, 20, { align: "center" });
+    pdf.text(
+      "National Institute of Technology Karnataka, Surathkal",
+      pageWidth / 2 + 10,
+      20,
+      { align: "center" }
+    );
 
     pdf.setFontSize(14);
     pdf.setTextColor(100, 100, 100);
-    pdf.text("Department of Information Technology", pageWidth / 2 + 10, 35, { align: "center" });
+    pdf.text("Department of Information Technology", pageWidth / 2 + 10, 35, {
+      align: "center",
+    });
 
     // Phishing Detection Report title
     pdf.setFontSize(24);
     pdf.setTextColor(44, 62, 80);
-    pdf.text("Phishing Detection Report", pageWidth / 2, 60, { align: "center" });
+    pdf.text("Phishing Detection Report", pageWidth / 2, 60, {
+      align: "center",
+    });
 
     // Divider line
     pdf.setDrawColor(52, 152, 219);
@@ -93,7 +104,7 @@ const Index = () => {
 
     // URL section with box
     pdf.setFillColor(249, 249, 249);
-    pdf.rect(20, 80, pageWidth - 40, 20, 'F');
+    pdf.rect(20, 80, pageWidth - 40, 20, "F");
     pdf.setFontSize(12);
     pdf.setTextColor(44, 62, 80);
     pdf.text("URL:", 25, 90);
@@ -107,12 +118,14 @@ const Index = () => {
     } else {
       pdf.setFillColor(240, 255, 240);
     }
-    pdf.rect(20, 110, pageWidth - 40, 25, 'F');
+    pdf.rect(20, 110, pageWidth - 40, 25, "F");
     pdf.setFontSize(16);
     const textColor = isPotentialPhishing ? [192, 57, 43] : [39, 174, 96];
     pdf.setTextColor(textColor[0], textColor[1], textColor[2]);
     pdf.text(
-      `Prediction: ${isPotentialPhishing ? "Potential Phishing Website" : "Safe Website"}`,
+      `Prediction: ${
+        isPotentialPhishing ? "Potential Phishing Website" : "Safe Website"
+      }`,
       pageWidth / 2,
       125,
       { align: "center" }
@@ -126,7 +139,9 @@ const Index = () => {
     // Feature grid
     let yPos = 165;
     let xPos = 20;
-    const features = Object.entries(data).filter(([key]) => key !== "prediction");
+    const features = Object.entries(data).filter(
+      ([key]) => key !== "prediction"
+    );
 
     features.forEach(([key, value], index) => {
       if (yPos > pageHeight - 20) {
@@ -136,7 +151,7 @@ const Index = () => {
 
       // Feature box
       pdf.setFillColor(249, 249, 249);
-      pdf.rect(xPos, yPos, (pageWidth - 50) / 2, 25, 'F');
+      pdf.rect(xPos, yPos, (pageWidth - 50) / 2, 25, "F");
 
       // Feature name
       pdf.setFontSize(11);
@@ -164,18 +179,26 @@ const Index = () => {
     pdf.text(`Generated on: ${timestamp}`, 20, pageHeight - 10);
 
     // Save the PDF
-    pdf.save(`${urlToAnalyze.replace(/[^a-zA-Z0-9]/g, '_')}-phishing-report-${new Date().getTime()}.pdf`);
+    pdf.save(
+      `${urlToAnalyze.replace(
+        /[^a-zA-Z0-9]/g,
+        "_"
+      )}-phishing-report-${new Date().getTime()}.pdf`
+    );
   };
 
   const handleUrlSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch("https://admittedly-usable-jennet.ngrok-free.app/api/check-phishing", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url }),
-      });
+      const response = await fetch(
+        "https://phishing-website-detection-1-t0ib.onrender.com/api/check-phishing",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url }),
+        }
+      );
       const data: PhishingResponse = await response.json();
       setResult(data); // Update the state with the backend reply
     } catch (error) {
@@ -198,11 +221,14 @@ const Index = () => {
 
         for (let i = 0; i < urls.length; i++) {
           try {
-            const response = await fetch("https://admittedly-usable-jennet.ngrok-free.app/api/check-phishing", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ url: urls[i] }),
-            });
+            const response = await fetch(
+              "https://phishing-website-detection-1-t0ib.onrender.com/api/check-phishing",
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ url: urls[i] }),
+              }
+            );
             const data = await response.json();
             analysisResults.push({
               url: urls[i] as string,
@@ -230,11 +256,7 @@ const Index = () => {
       {/* Header */}
       <header className="border-b bg-white dark:bg-gray-950 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center">
-          <img
-            src="/nitk.png"
-            alt="NITK Logo"
-            className="h-10 w-10 mr-4"
-          />
+          <img src="/nitk.png" alt="NITK Logo" className="h-10 w-10 mr-4" />
           <div>
             <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">
               National Institute of Technology Karnataka, Surathkal
@@ -251,21 +273,21 @@ const Index = () => {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle>
-              Phishing Website Detection System [ IT352 Course Project Jan - May 2025 ]
+              Phishing Website Detection System [ IT352 Course Project Jan - May
+              2025 ]
             </CardTitle>
             <CardDescription>
-            Developed by
+              Developed by
               <span className="font-semibold text-gray-900 dark:text-gray-100">
                 {" "}
                 Nithin S{" "}
               </span>{" "}
-              [221IT085] 
-              &
+              [221IT085] &
               <span className="font-semibold text-gray-900 dark:text-gray-100">
                 {" "}
-                Jay Chavan {" "}
+                Jay Chavan{" "}
               </span>{" "}
-              [221IT020] 
+              [221IT020]
             </CardDescription>
           </CardHeader>
         </Card>
@@ -293,20 +315,23 @@ const Index = () => {
                     onChange={(e) => setUrl(e.target.value)}
                     required
                   />
-                  <Button type="submit" disabled={isLoading} className="bg-black text-white hover:bg-black">
-  {isLoading ? (
-    <>
-      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-      Analyzing...
-    </>
-  ) : (
-    <>
-      <Link className="mr-2 h-4 w-4" />
-      Analyze
-    </>
-  )}
-</Button>
-
+                  <Button
+                    type="submit"
+                    disabled={isLoading}
+                    className="bg-black text-white hover:bg-black"
+                  >
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Analyzing...
+                      </>
+                    ) : (
+                      <>
+                        <Link className="mr-2 h-4 w-4" />
+                        Analyze
+                      </>
+                    )}
+                  </Button>
                 </form>
 
                 {result && (
@@ -324,7 +349,10 @@ const Index = () => {
                           : "Website Appears Safe"}
                       </h3>
                     </div>
-                    <Button className="bg-black text-white hover:bg-black" onClick={() => generatePDF(result, url)}>
+                    <Button
+                      className="bg-black text-white hover:bg-black"
+                      onClick={() => generatePDF(result, url)}
+                    >
                       <FileDown className="mr-2 h-4 w-4" />
                       Download Report
                     </Button>
@@ -339,12 +367,12 @@ const Index = () => {
                             <div className="text-sm text-gray-500 dark:text-gray-400">
                               {key}
                             </div>
-                            <div className="font-medium">{value.toString()}</div>
+                            <div className="font-medium">
+                              {value.toString()}
+                            </div>
                           </div>
                         ))}
                     </div>
-
-                    
                   </div>
                 )}
               </CardContent>
@@ -419,7 +447,16 @@ const Index = () => {
                               <Button
                                 size="sm"
                                 variant="outline"
-                                onClick={() => generatePDF({ ...result.features, url: result.url, prediction: result.prediction }, result.url)}
+                                onClick={() =>
+                                  generatePDF(
+                                    {
+                                      ...result.features,
+                                      url: result.url,
+                                      prediction: result.prediction,
+                                    },
+                                    result.url
+                                  )
+                                }
                               >
                                 <FileDown className="h-4 w-4 mr-1" />
                                 Report

@@ -204,11 +204,15 @@ async def check_phishing(request: URLRequest):
             loaded_modle = pickle.load(file)
         prediction = loaded_model.predict([encoded_faetures])[0]  # Get prediction
         print(url)
-        if(prediction == 'good') :
+        if(prediction == 1) :
             print("Safe")
         else:
             print("Phishing")
         if(flag==1):
+            prediction=0
+        if(prediction==1):
+            prediction='good'
+        else:
             prediction='bad'
         return {
             "prediction": prediction,

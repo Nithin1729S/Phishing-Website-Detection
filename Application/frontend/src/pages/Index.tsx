@@ -171,60 +171,16 @@ const Index = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      // For demonstration, we'll simulate the API response
-      // In a real application, you would uncomment the fetch code below
-      
-      /*
-      const response = await fetch("http://localhost:8000/api/check-phishing", {
+      const response = await fetch("https://admittedly-usable-jennet.ngrok-free.app/api/check-phishing", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
       });
       const data: PhishingResponse = await response.json();
-      */
-      
-      // Simulate API response with mock data
-      setTimeout(() => {
-        const isSuspicious = url.includes('phish') || url.includes('scam') || Math.random() > 0.6;
-        const mockData: PhishingResponse = {
-          prediction: isSuspicious ? "bad" : "good",
-          url_length: url.length,
-          contains_ip: url.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/) ? "yes" : "no",
-          contains_at_symbol: url.includes('@') ? "yes" : "no",
-          contains_double_slash: url.includes('//') ? "yes" : "no",
-          contains_dash_symbol: url.includes('-') ? "yes" : "no",
-          contains_subdomain: (url.match(/\./g) || []).length > 1 ? "yes" : "no",
-          ssl_final_state: isSuspicious ? "invalid" : "valid",
-          domain_registration_length: Math.floor(Math.random() * 365) + " days",
-          favicon: Math.random() > 0.5 ? "valid" : "invalid",
-          port: "standard",
-          https_token: url.includes('https') ? "present" : "absent",
-          request_url: Math.random() > 0.7 ? "suspicious" : "normal",
-          url_of_anchor: Math.random() > 0.6 ? "suspicious" : "normal",
-          links_in_tags: Math.floor(Math.random() * 50),
-          sfh: Math.random() > 0.5 ? "suspicious" : "normal",
-          submitting_to_email: Math.random() > 0.8 ? "yes" : "no",
-          abnormal_url: isSuspicious ? "yes" : "no",
-          redirect: Math.floor(Math.random() * 5),
-          on_mouseover: Math.random() > 0.7 ? "changed" : "normal",
-          right_click: Math.random() > 0.8 ? "disabled" : "enabled",
-          popup_window: Math.random() > 0.8 ? "yes" : "no",
-          iframe: Math.random() > 0.7 ? "present" : "absent",
-          age_of_domain: Math.floor(Math.random() * 10) + " years",
-          dns_record: isSuspicious ? "not_found" : "found",
-          web_traffic: Math.floor(Math.random() * 100000),
-          page_rank: (Math.random() * 10).toFixed(2),
-          google_index: isSuspicious ? "not_indexed" : "indexed",
-          links_pointing_to_page: Math.floor(Math.random() * 100),
-          statistical_report: isSuspicious ? "suspicious" : "normal"
-        };
-        
-        setResult(mockData);
-        setIsLoading(false);
-      }, 1500);
-      
+      setResult(data); // Update the state with the backend reply
     } catch (error) {
       console.error("Error:", error);
+    } finally {
       setIsLoading(false);
     }
   };
@@ -236,47 +192,23 @@ const Index = () => {
 
     Papa.parse(file, {
       complete: async (results) => {
-        const urls = results.data.flat().filter(Boolean) as string[];
+        const urls = results.data.flat().filter(Boolean);
         const totalUrls = urls.length;
         const analysisResults: BulkAnalysisResult[] = [];
 
-        // For demonstration, we'll simulate the API response
         for (let i = 0; i < urls.length; i++) {
           try {
-            // In a real application, you would uncomment the fetch code below
-            /*
-            const response = await fetch("http://localhost:8000/api/check-phishing", {
+            const response = await fetch("https://admittedly-usable-jennet.ngrok-free.app/api/check-phishing", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ url: urls[i] }),
             });
             const data = await response.json();
-            */
-            
-            // Simulate API response
-            await new Promise(resolve => setTimeout(resolve, 300));
-            const currentUrl = urls[i];
-            const isSuspicious = currentUrl.includes('phish') || currentUrl.includes('scam') || Math.random() > 0.6;
-            
-            const mockData: PhishingResponse = {
-              prediction: isSuspicious ? "bad" : "good",
-              url_length: currentUrl.length,
-              contains_ip: currentUrl.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/) ? "yes" : "no",
-              contains_at_symbol: currentUrl.includes('@') ? "yes" : "no",
-              domain_registration_length: Math.floor(Math.random() * 365) + " days",
-              ssl_final_state: isSuspicious ? "invalid" : "valid",
-              https_token: currentUrl.includes('https') ? "present" : "absent",
-              abnormal_url: isSuspicious ? "yes" : "no",
-              age_of_domain: Math.floor(Math.random() * 10) + " years",
-              web_traffic: Math.floor(Math.random() * 100000),
-            };
-            
             analysisResults.push({
-              url: currentUrl,
-              prediction: mockData.prediction,
-              features: mockData,
+              url: urls[i] as string,
+              prediction: data.prediction,
+              features: data,
             });
-            
           } catch (error) {
             console.error(`Error analyzing ${urls[i]}:`, error);
           }
@@ -294,13 +226,15 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 animate-fade-in">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       {/* Header */}
       <header className="border-b bg-white dark:bg-gray-950 shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center">
-          <div className="h-10 w-10 mr-4 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-            N
-          </div>
+          <img
+            src="/nitk.png"
+            alt="NITK Logo"
+            className="h-10 w-10 mr-4"
+          />
           <div>
             <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">
               National Institute of Technology Karnataka, Surathkal
@@ -313,14 +247,14 @@ const Index = () => {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 animate-slide-in">
-        <Card className="mb-8 overflow-hidden glass-card">
-          <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
-            <CardTitle className="text-2xl">
+      <main className="container mx-auto px-4 py-8">
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>
               Phishing Website Detection System [ IT352 Course Project Jan - May 2025 ]
             </CardTitle>
-            <CardDescription className="text-base">
-              Developed by
+            <CardDescription>
+            Developed by
               <span className="font-semibold text-gray-900 dark:text-gray-100">
                 {" "}
                 Nithin S{" "}
@@ -329,7 +263,7 @@ const Index = () => {
               &
               <span className="font-semibold text-gray-900 dark:text-gray-100">
                 {" "}
-                Jay Chavan{" "}
+                Jay Chavan {" "}
               </span>{" "}
               [221IT020] 
             </CardDescription>
@@ -337,12 +271,12 @@ const Index = () => {
         </Card>
 
         <Tabs defaultValue="single" className="space-y-4">
-          <TabsList className="w-full max-w-md mx-auto">
-            <TabsTrigger value="single" className="w-1/2">Single URL Analysis</TabsTrigger>
-            <TabsTrigger value="bulk" className="w-1/2">Bulk Analysis</TabsTrigger>
+          <TabsList>
+            <TabsTrigger value="single">Single URL Analysis</TabsTrigger>
+            <TabsTrigger value="bulk">Bulk Analysis</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="single" className="animate-scale-in">
+          <TabsContent value="single">
             <Card>
               <CardHeader>
                 <CardTitle>Analyze Single URL</CardTitle>
@@ -352,31 +286,31 @@ const Index = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <form onSubmit={handleUrlSubmit} className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                <form onSubmit={handleUrlSubmit} className="flex space-x-2">
                   <Input
                     placeholder="Enter URL to analyze..."
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                     required
-                    className="flex-1"
                   />
-                  <Button type="submit" disabled={isLoading} className="button-hover">
-                    {isLoading ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Analyzing...
-                      </>
-                    ) : (
-                      <>
-                        <Link className="mr-2 h-4 w-4" />
-                        Analyze
-                      </>
-                    )}
-                  </Button>
+                  <Button type="submit" disabled={isLoading} className="bg-black text-white hover:bg-black">
+  {isLoading ? (
+    <>
+      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+      Analyzing...
+    </>
+  ) : (
+    <>
+      <Link className="mr-2 h-4 w-4" />
+      Analyze
+    </>
+  )}
+</Button>
+
                 </form>
 
                 {result && (
-                  <div className="mt-6 space-y-4 animate-fade-in">
+                  <div className="mt-6 space-y-4">
                     <div
                       className={`p-4 rounded-lg ${
                         result.prediction === "bad"
@@ -390,32 +324,34 @@ const Index = () => {
                           : "Website Appears Safe"}
                       </h3>
                     </div>
-                    <Button onClick={() => generatePDF(result, url)} className="button-hover">
+                    <Button className="bg-black text-white hover:bg-black" onClick={() => generatePDF(result, url)}>
                       <FileDown className="mr-2 h-4 w-4" />
                       Download Report
                     </Button>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-2 gap-4">
                       {Object.entries(result)
                         .filter(([key]) => key !== "prediction")
                         .map(([key, value]) => (
                           <div
                             key={key}
-                            className="p-4 feature-card"
+                            className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm"
                           >
                             <div className="text-sm text-gray-500 dark:text-gray-400">
-                              {key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                              {key}
                             </div>
                             <div className="font-medium">{value.toString()}</div>
                           </div>
                         ))}
                     </div>
+
+                    
                   </div>
                 )}
               </CardContent>
             </Card>
           </TabsContent>
 
-          <TabsContent value="bulk" className="animate-scale-in">
+          <TabsContent value="bulk">
             <Card>
               <CardHeader>
                 <CardTitle>Bulk URL Analysis</CardTitle>
@@ -437,13 +373,12 @@ const Index = () => {
                       if (file) handleBulkAnalysis(file);
                     }}
                     disabled={isBulkAnalyzing}
-                    className="cursor-pointer"
                   />
                 </div>
 
                 {isBulkAnalyzing && (
-                  <div className="space-y-2 animate-fade-in">
-                    <Progress value={bulkProgress} className="h-2" />
+                  <div className="space-y-2">
+                    <Progress value={bulkProgress} />
                     <p className="text-sm text-gray-500">
                       Analyzing URLs... {Math.round(bulkProgress)}%
                     </p>
@@ -451,7 +386,7 @@ const Index = () => {
                 )}
 
                 {bulkResults.length > 0 && (
-                  <div className="space-y-4 animate-fade-in">
+                  <div className="space-y-4">
                     <div className="rounded-lg border p-4">
                       <h3 className="font-semibold mb-2">Analysis Results</h3>
                       <div className="space-y-2">
@@ -464,9 +399,9 @@ const Index = () => {
                                 : "bg-green-50 dark:bg-green-900/10"
                             }`}
                           >
-                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                              <div className="space-y-1 mb-2 sm:mb-0">
-                                <p className="text-sm font-medium truncate max-w-[250px] sm:max-w-[350px] md:max-w-[500px]">
+                            <div className="flex items-center justify-between">
+                              <div className="space-y-1">
+                                <p className="text-sm font-medium truncate">
                                   {result.url}
                                 </p>
                                 <p
@@ -484,8 +419,7 @@ const Index = () => {
                               <Button
                                 size="sm"
                                 variant="outline"
-                                onClick={() => generatePDF({ ...result.features, prediction: result.prediction } as PhishingResponse, result.url)}
-                                className="button-hover"
+                                onClick={() => generatePDF({ ...result.features, url: result.url, prediction: result.prediction }, result.url)}
                               >
                                 <FileDown className="h-4 w-4 mr-1" />
                                 Report

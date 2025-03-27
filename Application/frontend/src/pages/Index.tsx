@@ -192,7 +192,7 @@ const Index = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://phishing-website-detection-1-t0ib.onrender.com/api/check-phishing",
+        "https://phishing-website-detection-production-42cf.up.railway.app/api/check-phishing",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -222,7 +222,7 @@ const Index = () => {
         for (let i = 0; i < urls.length; i++) {
           try {
             const response = await fetch(
-              "https://phishing-website-detection-1-t0ib.onrender.com/api/check-phishing",
+              "https://phishing-website-detection-production-42cf.up.railway.app/api/check-phishing",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

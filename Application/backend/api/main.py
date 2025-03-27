@@ -201,8 +201,8 @@ async def check_phishing(request: URLRequest):
         model_filename = f'model/svm_model_rbf.pkl'
         with open(model_filename, 'rb') as file:
             loaded_modle = pickle.load(file)
-        encoded_features=url
-        prediction = loaded_model.predict([encoded_features])[0]  # Get prediction
+        encoded_faetures=url
+        prediction = loaded_model.predict([encoded_faetures])[0]  # Get prediction
         print(url)
         if(prediction == 'good') :
             print("Safe")

@@ -3,7 +3,7 @@
 ## Introduction
 Phishing attacks pose a significant threat to cybersecurity, necessitating robust detection mechanisms. In this study, we leverage a dataset of approximately 500,000 phishing URLs sourced from PhishTank to develop an efficient phishing detection system. 
 
-We update labels of samples by verifying with VirusTotal. We begin by extracting 87 distinct features from the URLs and employ autoencoders for dimensionality reduction, condensing the feature space to 15 while preserving critical information. To classify phishing URLs, we train all four kernels of Support Vector Machines (SVM), achieving an exceptional accuracy of **99.53%**.
+We update labels of samples by verifying with VirusTotal. We begin by extracting 87 distinct features from the URLs and employ autoencoders for dimensionality reduction, condensing the feature space to 15 while preserving critical information. To classify phishing URLs, we train all four kernels of Support Vector Machines (SVM), achieving accuracy of **99.53%**.
 
 
 
